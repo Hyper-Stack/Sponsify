@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sponsify</title>
+    <link rel='stylesheet' href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+    <link rel='stylesheet'
+        href='https://startbootstrap.com/templates/agency/font-awesome-4.1.0/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Arvo:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Arvo:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rokkitt&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <!-- partial:index.partial.html -->
+
+    <body id="page-top" class="index" data-pinterest-extension-installed="cr1.3.4">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-fixed-top navbar-shrink">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header page-scroll">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <span class="navbar-brand">Sponsify</span>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="hidden active">
+                            <a href="#page-top"></a>
+                        </li>
+                        <li class="">
+                            <a class="page-scroll" href="#services">Services</a>
+                        </li>
+                        <li class="">
+                            <a class="page-scroll" href="#about">About</a>
+                        </li>
+                        <li class="">
+                            <a class="page-scroll" href="#portfolio">Portfolio</a>
+                        </li>
+                        <li class="">
+                            <a class="page-scroll" href="#team">Team</a>
+                        </li>
+                        <li class="">
+                            <a class="page-scroll" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+        <!-- Header -->
+        <header>
+            <div class="container">
+                <div class="intro-text">
+                    <div class="intro-heading">Sponsorship made easy</div>
+                    <div class="intro-lead-in" style="margin-top: 1em;">Better events, Together</div>
+                    
+                </div>
+            </div>
+        </header>
+
+        <!-- Services Section -->
+        <section id="services">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h2 class="section-heading">Services</h2>
+                        <h3 class="section-subheading text-muted lead">"In search of Sponsors or want to Sponsor, we are
+                            here to help you find a easy way"</h3>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                            <!-- <i class="fa fa-circle fa-stack-2x text-primary"></i> -->
+                            <img class="serv-icon"
+                                src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHdpZHRoPSI1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgaWQ9IkZsYXQiPjxwYXRoIGQ9Im0zMjggMjYwLjV2NDMuNWgtMTQ0di00My41bDI0LTQuNXYtNzJoOTZ2NzJ6IiBmaWxsPSIjZmVjOWEzIi8+PHBhdGggZD0ibTQzMiAzMTkuODN2MTM2LjE3aC0zNTJ2LTEzNi4xNmE0OCA0OCAwIDAgMSAzOS4xNS00Ny4xOGw4OC44NS0xNi42NiA0OCAxNiA0OC0xNiA4OC44NSAxNi42NmE0Ny45NTYgNDcuOTU2IDAgMCAxIDM5LjE1IDQ3LjE3eiIgZmlsbD0iIzRkNWU3OCIvPjxwYXRoIGQ9Im00MzIgMzE5LjgzdjEzNi4xN2gtMjMyLjg3Yzg0LjE2LTM5LjY3IDE1OC44LTk3LjAxIDIxMC4wNS0xNzcuMDRhNDggNDggMCAwIDEgMjIuODIgNDAuODd6IiBmaWxsPSIjNDQ1NDZjIi8+PHBhdGggZD0ibTIwOCAyNTYgNDggMTg0IDQ4LTE4NC4wMDMtNDggMTYuMDAzeiIgZmlsbD0iI2IwYjBhZSIvPjxwYXRoIGQ9Im0zMDQgMjU1Ljk5Ny00OCAxNi4wMDMgMzYuMjU4IDI5LjAwN3oiIGZpbGw9IiNlMGUwZGUiLz48cGF0aCBkPSJtMjU2IDI3Mi00OC0xNiAxMS43NDEgNDUuMDA3eiIgZmlsbD0iI2UwZTBkZSIvPjxwYXRoIGQ9Im0yNzIgMzc4LjY2NnYtOTMuODY2bC0xNi0xMi44LTE2IDEyLjh2OTMuODY3bDE2IDYxLjMzM3oiIGZpbGw9IiMzNDhmZDkiLz48cGF0aCBkPSJtMTkyIDMyOC04IDMyIDcyIDgwLTQ4LTE4NC0zMiA2LTI0IDU4eiIgZmlsbD0iIzU1NmE4YSIvPjxwYXRoIGQ9Im0zMjAgMzI4IDggMzItNzIgODAgNDgtMTg0IDMyIDYgMjQgNTh6IiBmaWxsPSIjNTU2YThhIi8+PHBhdGggZD0ibTE0NCAzNTJoMTZ2OTZoLTE2eiIgZmlsbD0iIzMxM2I0YyIvPjxwYXRoIGQ9Im0zNTIgMzUyaDE2djk2aC0xNnoiIGZpbGw9IiMzMTNiNGMiLz48cGF0aCBkPSJtMzg0IDM2OGg0OHY3MmwtNDAtLjAwMy00OC4xNjEgNi44OC03LjgzOS01NC44Nzd6IiBmaWxsPSIjZmVjOWEzIi8+PHBhdGggZD0ibTI5OC44MTggMzk0LjMyIDkuMTkyIDU5Ljc2MS0xNTYuMDEgMzMuOTE5aC00OGEyNCAyNCAwIDAgMSAtMjQtMjR2LTU2eiIgZmlsbD0iIzQwNGY2NiIvPjxwYXRoIGQ9Im0zNDMuODM5IDQ0Ni44NzctNy44MzkgMS4xMjMtMjcuOTkgNi4wODEtOS4xOTItNTkuNzYxIDM3LjE4Mi0yLjMyeiIgZmlsbD0iI2UwZTBkZSIvPjxwYXRoIGQ9Im0xMjggMzY4aC00OHY3Mmw0MC0uMDAzIDQ4LjE2MSA2Ljg4IDcuODM5LTU0Ljg3N3oiIGZpbGw9IiNmZWM5YTMiLz48cGF0aCBkPSJtMjMwLjYxIDM5NS40MS00LjUzIDYzLjQ4LTUwLjA4LTEwLjg5LTcuODQtMS4xMiA3Ljg0LTU0Ljg4eiIgZmlsbD0iI2UwZTBkZSIvPjxwYXRoIGQ9Im0yMTMuMTgxIDM5NC4zMjQtNS4xODEgNjkuNjc2IDE1MiAyNGg0OGEyNCAyNCAwIDAgMCAyNC0yNHYtNTZ6IiBmaWxsPSIjNGQ1ZTc4Ii8+PHBhdGggZD0ibTI0MCA0MzJoMTZ2MTZoLTE2eiIgZmlsbD0iIzMxM2I0YyIvPjxwYXRoIGQ9Im0yNzIgNDMyaDE2djE2aC0xNnoiIGZpbGw9IiMzMTNiNGMiLz48ZyBmaWxsPSIjZmViNzg0Ij48cGF0aCBkPSJtMzA0IDIyOS41Njd2LTQ1LjU2N2gtNDgtNDh2NDUuNTY3YTcxLjY4NyA3MS42ODcgMCAwIDAgOTYgMHoiLz48cGF0aCBkPSJtMzI4IDEwNHY0OGEyNCAyNCAwIDAgMCAwLTQ4eiIvPjxwYXRoIGQ9Im0xODQuNDA1IDEwNGgtLjRhMjQgMjQgMCAwIDAgLS4wMDUgNDh2LTQ4eiIvPjwvZz48cGF0aCBkPSJtMzI4IDk2djY0YTcyLjAxIDcyLjAxIDAgMCAxIC03MS41NiA3MmgtLjQ0YTcyLjAwNiA3Mi4wMDYgMCAwIDEgLTcyLTcydi02NGMwLTM5Ljc2IDMyLjI0LTY0IDcyLTY0aC40NGMxOS43MS4wOSAzNy41NCA2LjE0IDUwLjQ3IDE3LjA5IDEzLjAzIDExLjAzIDIxLjA5IDI3LjAzIDIxLjA5IDQ2LjkxeiIgZmlsbD0iI2ZlYzlhMyIvPjxwYXRoIGQ9Im0zMjggOTZ2NjRhNzIuMDEgNzIuMDEgMCAwIDEgLTcxLjU2IDcyIDgzLjI3OSA4My4yNzkgMCAwIDAgMzQuNDQtNjcuNTJ2LTY0Ljk3YTgzLjI2IDgzLjI2IDAgMCAwIC0zNC40NC02Ny41MWMxOS43MS4wOSAzNy41NCA2LjE0IDUwLjQ3IDE3LjA5IDEzLjAzIDExLjAzIDIxLjA5IDI3LjAzIDIxLjA5IDQ2LjkxeiIgZmlsbD0iI2ZlYzA5MyIvPjxjaXJjbGUgY3g9IjIyMCIgY3k9IjExNiIgZmlsbD0iIzdhNDMyYSIgcj0iMTIiLz48Y2lyY2xlIGN4PSIyOTIiIGN5PSIxMTYiIGZpbGw9IiM3YTQzMmEiIHI9IjEyIi8+PHBhdGggZD0ibTI0Ni44OTEgMTc2aC0xNC44OTF2LTE2aDE0Ljg5MWMxMC45NTMgMCAyMS41NTQtMi41MTYgMjkuMDc4LTYuOTA2bDguMDYyIDEzLjgxMmMtMTAuMDQ3IDUuODY3LTIzLjIzMSA5LjA5NC0zNy4xNCA5LjA5NHoiIGZpbGw9IiNmN2E0NjgiLz48cGF0aCBkPSJtMzI4IDEyMHYtMzJjMC0yNi41MS0xNy45MDktNDgtNDAtNDhsMS40MDggNS4wNjhjNy44NDIgMjguMjMyIDIxLjA1NSA1My44ODggMzguNTkyIDc0LjkzMnoiIGZpbGw9IiM2ZTNjMjQiLz48cGF0aCBkPSJtMTg0IDEyMHYtNTUuMDE1YTI1Ljc1NCAyNS43NTQgMCAwIDEgMzItMjQuOTg1djI0cy0xNC40NjMgMzQuOTU2LTMyIDU2eiIgZmlsbD0iIzZlM2MyNCIvPjxwYXRoIGQ9Im0yMTYgNjRoMTEyYTQwIDQwIDAgMCAwIC00MC00MGgtMzMuMzczYTU0LjYyNiA1NC42MjYgMCAwIDAgLTM4LjYyNyAxNnoiIGZpbGw9IiM3YTQzMmEiLz48cGF0aCBkPSJtMjYxLjU4NCAyNC0zMS4wNCA0MGgyMC4yNmwzMS4wNC00MHoiIGZpbGw9IiM2ZTNjMjQiLz48cGF0aCBkPSJtMzE3LjgyNiAzNy41ODRhMzkuOSAzOS45IDAgMCAwIC0xMi45MjYtOS43MjFsLTM2Ljc3NyAzNi4xMzdoMjIuODI0eiIgZmlsbD0iIzZlM2MyNCIvPjwvZz48L3N2Zz4=" />
+                        </span>
+                        <h4 class="service-heading">For Event Managers</h4>
+                        <p class="text-muted service-text">Looking for sponsors? <br>
+                            No need to make hundreds of calls or send thousands of mails anymore. We are here to serve
+                            you with best
+                            potential sponsors for your event.</p>
+                        <a href="/manager/register" class="btn btn-default">Know More</a>
+
+                    </div>
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                            <!-- <i class="fa fa-circle fa-stack-2x text-primary"></i> -->
+                            <img class="serv-icon"
+                                src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjQ2NHB0IiB2aWV3Qm94PSIwIC0xNSA0NjQgNDY0IiB3aWR0aD0iNDY0cHQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0ibTI4MCAxNTJjMCAzNS4zNDc2NTYtMjguNjUyMzQ0IDY0LTY0IDY0cy02NC0yOC42NTIzNDQtNjQtNjRjLS4wMzkwNjItMTIuOTg4MjgxIDMuOTI1NzgxLTI1LjY3MTg3NSAxMS4zNTkzNzUtMzYuMzIwMzEyIDExLjU5NzY1Ni0xNi45MTAxNTcgMzAuNjIxMDk0LTI3LjIxMDkzOCA1MS4xMjEwOTQtMjcuNjc5Njg4aDEuNTE5NTMxYzIuNjk5MjE5IDAgNS4zOTg0MzguMTYwMTU2IDguMDc4MTI1LjQ4MDQ2OSAzLjQ5NjA5NCA5LjM0Mzc1IDEyLjQyNTc4MSAxNS41MzEyNSAyMi40MDIzNDQgMTUuNTE5NTMxaDExLjgzOTg0M2MxMy44MDA3ODIgMTIuMTMyODEyIDIxLjcwMzEyNiAyOS42MjUgMjEuNjc5Njg4IDQ4em0wIDAiIGZpbGw9IiNmZmQ0MjIiLz48cGF0aCBkPSJtOTguNDgwNDY5IDQxMS4zNTkzNzUtMTYuNzE4NzUgNi4wODIwMzEtNDMuNDQxNDA3IDE1LjgzOTg0NC0zOC4zMjAzMTItMTA1LjI4MTI1IDQzLjQ0MTQwNi0xNS44Mzk4NDQgMTYuNzE4NzUtNi4wODIwMzF6bTAgMCIgZmlsbD0iIzVhYWFlNyIvPjxwYXRoIGQ9Im0xNTUuODM5ODQ0IDM4MS45MjE4NzUgNS41MTk1MzEgMTUuMDM5MDYzLTYwLjE2MDE1NiAyMS45MTc5NjgtMi43MTg3NS03LjUxOTUzMS0zOC4zMjAzMTMtMTA1LjI4MTI1LTIuNzE4NzUtNy41MTk1MzEgNjAuMDc4MTI1LTIxLjgzOTg0NCA1LjUxOTUzMSAxNS4wNDI5Njl6bTAgMCIgZmlsbD0iIzFlODFjZSIvPjxwYXRoIGQ9Im00NjQgMHYxMjhoLTQ4di0xMjh6bTAgMCIgZmlsbD0iIzNkOWFlMiIvPjxwYXRoIGQ9Im0zMTAuODc4OTA2IDMwOC40ODA0NjkgNTcuNTE5NTMyLTIwLjg3ODkwN2M1Ljk2MDkzNy0yLjIzODI4MSAxMi41NzgxMjQtMS45NDkyMTggMTguMzIwMzEyLjc5Njg3NiA4Ljc1NzgxMiA0LjEyMTA5MyAxNC4xODM1OTQgMTMuMDkzNzUgMTMuNzY1NjI1IDIyLjc2MTcxOC0uNDE3OTY5IDkuNjY3OTY5LTYuNjA1NDY5IDE4LjEzNjcxOS0xNS42ODM1OTQgMjEuNDgwNDY5bC0xNDIuODAwNzgxIDUyLTIyLjU1ODU5NCA4LjIzODI4MS00OC41NjI1LTE2LjM5ODQzNy0xNS4wMzkwNjIgNS40NDE0MDYtMzIuODAwNzgyLTkwLjE2MDE1NiA1OS43NjE3MTktMjEuNzYxNzE5IDE4LjY0MDYyNSAzLjI4MTI1IDkwLjA3ODEyNSAxNS45MTc5NjljOC40NTMxMjUgMS40ODgyODEgMTUuNDY4NzUgNy4zNzUgMTguNDAyMzQ0IDE1LjQ0MTQwNi40NDE0MDYgMS4yNDYwOTQuNzYxNzE5IDIuNTMxMjUuOTU3MDMxIDMuODM5ODQ0em0wIDAiIGZpbGw9IiNmZmRhYWEiLz48cGF0aCBkPSJtNDE2IDI0djgwaC0xNy41MTk1MzFjMCAxNy42Nzk2ODgtMjQgMzItNDggMzJzLTQ4LTE0LjMyMDMxMi00OC0zMmgtNTZjLTkuOTc2NTYzLjAxMTcxOS0xOC45MDYyNS02LjE3NTc4MS0yMi40MDIzNDQtMTUuNTE5NTMxLTIuNjc5Njg3LS4zMjAzMTMtNS4zNzg5MDYtLjQ4MDQ2OS04LjA3ODEyNS0uNDgwNDY5aC0xLjUxOTUzMWMtMjAuNS40Njg3NS0zOS41MjM0MzggMTAuNzY5NTMxLTUxLjEyMTA5NCAyNy42Nzk2ODgtMy4yNS0xLjgwNDY4OC01Ljk5NjA5NC00LjM4NjcxOS04LTcuNTE5NTMyLTUuNTg1OTM3LTkuNDE3OTY4LTMuOTYwOTM3LTIxLjQ0MTQwNiAzLjkyMTg3NS0yOS4wMzkwNjJsNjUuMTE3MTg4LTY1LjA0Mjk2OWM4Ljk4MDQ2OC05LjAyMzQzNyAyMS4xOTE0MDYtMTQuMDkzNzUgMzMuOTIxODc0LTE0LjA3ODEyNWg4NC4xNjAxNTdsNTYgMjR6bTAgMCIgZmlsbD0iI2ZmZGFhYSIvPjxwYXRoIGQ9Im00MDAgMjRoMTZ2ODBoLTE2em0wIDAiIGZpbGw9IiNmMWNmYTIiLz48cGF0aCBkPSJtOTguNDgwNDY5IDQxMS4zNTkzNzUtMTYuNzE4NzUgNi4wODIwMzEtMzcuNjAxNTYzLTEwMy4zNjMyODEtLjcxODc1LTEuOTE3OTY5IDE2LjcxODc1LTYuMDgyMDMxem0wIDAiIGZpbGw9IiMzZDlhZTIiLz48cGF0aCBkPSJtMzEwLjQ0MTQwNiAxMDQuMjA3MDMxYy4wNTA3ODItNC40NzI2NTYtMy41MjczNDQtOC4xNDQ1MzEtOC04LjIwNzAzMWgtNTZjLTguNTIzNDM3LS4wMTU2MjUtMTUuNTQ2ODc1LTYuNjkxNDA2LTE2LTE1LjE5OTIxOS4wMjM0MzgtNC41MTE3MTkgMS44NDc2NTYtOC44MjgxMjUgNS4wNzQyMTktMTEuOTg0Mzc1czcuNTgyMDMxLTQuODkwNjI1IDEyLjA5Mzc1LTQuODE2NDA2aDc4LjgzMjAzMWM0LjQxNzk2OSAwIDgtMy41ODIwMzEgOC04cy0zLjU4MjAzMS04LTgtOGgtNzguNDQxNDA2Yy0xNy4wMTk1MzEuMTA5Mzc1LTMxLjMzNTkzOCAxMi43ODkwNjItMzMuNTAzOTA2IDI5LjY3MTg3NS0uNzY1NjI1IDEwLjQ1NzAzMSAzLjY0ODQzNyAyMC42MjUgMTEuODE2NDA2IDI3LjE5OTIxOSA2LjEzMjgxMiA0Ljc3NzM0NCAxMy43MjI2NTYgNy4yOTY4NzUgMjEuNDk2MDk0IDcuMTI4OTA2aDQ3LjgwODU5NGM0LjQxNDA2MiAxNC44MzIwMzEgMjAuNzU3ODEyIDI1LjgwODU5NCAzOC43NDIxODcgMzAuMDQ2ODc1IDIuMzU1NDY5LjUgNC44MDg1OTQtLjA5Mzc1IDYuNjc1NzgxLTEuNjE3MTg3IDEuODY3MTg4LTEuNTE5NTMyIDIuOTQxNDA2LTMuODA0Njg4IDIuOTI1NzgyLTYuMjE0ODQ0LS4wMjM0MzgtMy42OTE0MDYtMi41NzQyMTktNi44OTA2MjUtNi4xNjc5NjktNy43MzQzNzUtMTQuOTQ1MzEzLTMuNTI3MzQ0LTI3LjE2Nzk2OS0xMi44MDA3ODEtMjcuMzUxNTYzLTIyLjI3MzQzOHptMCAwIiBmaWxsPSIjZmZjNDc3Ii8+PHBhdGggZD0ibTIyNCAxNDRoLTE2Yy00LjQxNzk2OSAwLTgtMy41ODIwMzEtOC04czMuNTgyMDMxLTggOC04aDE2YzQuNDE3OTY5IDAgOCAzLjU4MjAzMSA4IDhoMTZjMC0xMy4yNTM5MDYtMTAuNzQ2MDk0LTI0LTI0LTI0di04aC0xNnY4Yy0xMy4yNTM5MDYgMC0yNCAxMC43NDYwOTQtMjQgMjRzMTAuNzQ2MDk0IDI0IDI0IDI0aDE2YzQuNDE3OTY5IDAgOCAzLjU4MjAzMSA4IDhzLTMuNTgyMDMxIDgtOCA4aC0xNmMtNC40MTc5NjkgMC04LTMuNTgyMDMxLTgtOGgtMTZjMCAxMy4yNTM5MDYgMTAuNzQ2MDk0IDI0IDI0IDI0djhoMTZ2LThjMTMuMjUzOTA2IDAgMjQtMTAuNzQ2MDk0IDI0LTI0cy0xMC43NDYwOTQtMjQtMjQtMjR6bTAgMCIgZmlsbD0iI2ZmNjI0MyIvPjxwYXRoIGQ9Im0zMTguNzg1MTU2IDMwNy4xOTkyMTljLS4yNjE3MTgtMS44MzU5MzgtLjcyNjU2Mi0zLjYzMjgxMy0xLjM4NjcxOC01LjM2NzE4OC0zLjkxNzk2OS0xMC43MzgyODEtMTMuMjU3ODEzLTE4LjU3ODEyNS0yNC41MTE3MTktMjAuNTg1OTM3bC0xMDguNzI2NTYzLTE5LjE5OTIxOWMtMS4zNzg5MDYtLjI1LTIuNzk2ODc1LS4xMjUtNC4xMTMyODEuMzU5Mzc1bC0yMi45MTAxNTYgOC4zMzU5MzhjLTQuMDcwMzEzIDEuNDg0Mzc0LTYuMjE4NzUgNS45NDE0MDYtNC44NDc2NTcgMTAuMDUwNzgxLjY4MzU5NCAyLjA0Njg3NSAyLjE2NDA2MyAzLjczMDQ2OSA0LjEwOTM3NiA0LjY2Nzk2OSAxLjk0MTQwNi45Mzc1IDQuMTc5Njg3IDEuMDUwNzgxIDYuMjEwOTM3LjMxNjQwNmwyMC44OTQ1MzEtNy42MDE1NjMgMTA2LjE5MTQwNiAxOC43MjY1NjNjNS43MDMxMjYuOTM3NSAxMC40OTIxODggNC44MDg1OTQgMTIuNjAxNTYzIDEwLjE4NzUuMjg5MDYzLjY5OTIxOC41IDEuNDI1NzgxLjYyNSAyLjE3NTc4MSAwIC4yNjk1MzEuMDcwMzEzLjU0Mjk2OS4xMjUuNzk2ODc1LjM1OTM3NSAxLjc4OTA2Mi4zODI4MTMgMy42Mjg5MDYuMDY2NDA2IDUuNDI1NzgxLTEuNTU0Njg3IDguNzAzMTI1LTkuODQzNzUgMTQuNTE1NjI1LTE4LjU1NDY4NyAxMy4wMTU2MjVsLTgyLjE2MDE1Ni0xNC40MTQwNjJjLTQuMzQ3NjU3LS43NjU2MjUtOC40OTYwOTQgMi4xMzY3MTgtOS4yNjE3MTkgNi40ODQzNzUtLjc2OTUzMSA0LjM1NTQ2OSAyLjEzMjgxMiA4LjUwNzgxMiA2LjQ4ODI4MSA5LjI3MzQzN2w4Mi4xOTE0MDYgMTQuNDg4MjgyYzE3LjQzMzU5NCAzLjAyMzQzNyAzNC4wMjczNDQtOC42MzY3MTkgMzcuMDg1OTM4LTI2LjA2MjUuNjI1LTMuNjY3OTY5LjU4MjAzMS03LjQxNzk2OS0uMTE3MTg4LTExLjA3NDIxOXptMCAwIiBmaWxsPSIjZmZjNDc3Ii8+PC9zdmc+" />
+                        </span>
+                        <h4 class="service-heading">For Sponsors</h4>
+                        <p class="text-muted service-text">Looking to sponsor? <br>
+                            The event being organised under the name of your brand should be one of the best, just like
+                            your brand! Don't worry, you'll find the best suitable events around you.</p>
+                        <a href="/sponsor/register" class="btn btn-default">Know More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h2 class="section-heading">About</h2>
+                        <h3 class="section-subheading text-muted">Plan for the unplannable with world's most
+                            collaborative events platform</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 col-sm-12 svg-cont">
+                        <img class="abt-svg" src="svg/team.svg" alt="" srcset="" style="margin-top: 0;">
+                        <h2 class="abt-head">A Team You’ll Love To Work With</h2>
+                        <p class="abt-det">Life is too short to not work with people you like. We focus on hiring people
+                            who are not
+                            just awesome at tech, but are awesome solution creators. The best part? Our team is 100%
+                            aligned to our mission to simplify and our core values of breathing passion, selfless
+                            service and learn & grow.</p>
+                    </div>
+                    <div class="col-md-4 col-sm-12 svg-cont">
+                        <img src="svg/undraw_Meeting_re_i53h.svg" class="abt-svg" alt="" srcset="">
+                        <h2 class="abt-head">Breaking The Mold Of A Traditional Company</h2>
+                        <p class="abt-det">We’re out to change the event industry. One way we do this is by using
+                            technology to make
+                            things more efficient. For example, our team is distributed across the country so we can be
+                            anywhere you need us to be. We use efficiency to get costs down and pass those savings onto
+                            you.</p>
+                    </div>
+                    <div class="col-md-4 col-sm-12 svg-cont">
+                        <img src="svg/team2.svg" alt="" srcset="" class="abt-svg" style="margin-top: 0;">
+                        <h2 class="abt-head">We’re The Event Industry Leaders</h2>
+                        <p class="abt-det">When you search for the "Top events industry blogs"- you know what you find?
+                            We’re on every
+                            list. We’ve been named top events influencers by every publication in the industry. This
+                            means won’t be working with a company that just follows the event trends, we create them.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Portfolio Grid Section -->
+        <section id="portfolio" class="bg-light-gray port">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h2 class="section-heading" style="color: rgb(80, 80, 80) !important;">Portfolio</h2>
+                        <h3 class="section-subheading text-muted">List of few biggest National Events managed by us.
+                        </h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 col-sm-6 portfolio-item">
+                        <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content">
+                                    <i class="fa fa-plus fa-3x"></i>
+                                </div>
+                            </div>
+                            <img src="images/8.jpg" class="img-responsive eimg" alt="">
+                        </a>
+                        <div class="portfolio-caption">
+                            <h4>Barcardi NH7 Weekender</h4>
+                            <p class="text-muted">Pune, Maharastra</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 portfolio-item">
+                        <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content">
+                                    <i class="fa fa-plus fa-3x"></i>
+                                </div>
+                            </div>
+                            <img src="images/4.jpg" class="img-responsive eimg" alt="">
+                        </a>
+                        <div class="portfolio-caption">
+                            <h4>Saarang</h4>
+                            <p class="text-muted">Madras, Chennai</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 portfolio-item">
+                        <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content">
+                                    <i class="fa fa-plus fa-3x"></i>
+                                </div>
+                            </div>
+                            <img src="images/sula.jpg" class="img-responsive eimg" alt="">
+                        </a>
+                        <div class="portfolio-caption">
+                            <h4>SulaFest</h4>
+                            <p class="text-muted">Nashik, Maharastra</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 portfolio-item">
+                        <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content">
+                                    <i class="fa fa-plus fa-3x"></i>
+                                </div>
+                            </div>
+                            <img src="images/5.jpg" class="img-responsive eimg" alt="">
+                        </a>
+                        <div class="portfolio-caption">
+                            <h4>Sunburn</h4>
+                            <p class="text-muted">Sunburn Arena, Delhi</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 portfolio-item">
+                        <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content">
+                                    <i class="fa fa-plus fa-3x"></i>
+                                </div>
+                            </div>
+                            <img src="images/9.jpg" class="img-responsive eimg" alt="">
+                        </a>
+                        <div class="portfolio-caption">
+                            <h4>VH1 Supersonic</h4>
+                            <p class="text-muted">Pune, Maharastra</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 portfolio-item">
+                        <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content">
+                                    <i class="fa fa-plus fa-3x"></i>
+                                </div>
+                            </div>
+                            <img src="images/6.jpg" class="img-responsive eimg" alt="">
+                        </a>
+                        <div class="portfolio-caption">
+                            <h4>Mahindra Blues</h4>
+                            <p class="text-muted">Mumbai, Maharastra</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Team Section -->
+        <section id="team">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading" style="margin-top: 0.8em;">Our Amazing Team</h2>
+                    <h3 class="section-subheading text-muted" style="margin-bottom: 1em;">(Hover)</h3>
+                </div>
+            </div>
+            <div class="glass">
+                <div class="container2">
+
+                    <div class="card">
+                        <div class="content">
+                            <h2>01</h2>
+                            <h3>Card one</h3>
+                            <p>lorem ipsum dolor sit amet, consectetur adipiscing elit, lorem ipsum dolor sit amet,
+                                consectetur adipiscing
+                                elit</p>
+                            <a href="">Read more</a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="content">
+                            <h2>02</h2>
+                            <h3>Card two</h3>
+                            <p>lorem ipsum dolor sit amet, consectetur adipiscing elit, lorem ipsum dolor sit amet,
+                                consectetur adipiscing
+                                elit</p>
+                            <a href="">Read more</a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="content">
+                            <h2>03</h2>
+                            <h3>Card three</h3>
+                            <p>lorem ipsum dolor sit amet, consectetur adipiscing elit, lorem ipsum dolor sit amet,
+                                consectetur adipiscing
+                                elit</p>
+                            <a href="">Read more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Clients Aside -->
+        <section id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h2 class="section-heading">Contact Us</h2>
+                        <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <form name="sentMessage" id="contactForm" novalidate="">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Your Name *" id="name"
+                                            required="" data-validation-required-message="Please enter your name.">
+                                        <p class="help-block text-danger"></p>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" placeholder="Your Email *" id="email"
+                                            required=""
+                                            data-validation-required-message="Please enter your email address.">
+                                        <p class="help-block text-danger"></p>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="tel" class="form-control" placeholder="Your Phone *" id="phone"
+                                            required=""
+                                            data-validation-required-message="Please enter your phone number.">
+                                        <p class="help-block text-danger"></p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <textarea class="form-control" placeholder="Your Message *" id="message"
+                                            required=""
+                                            data-validation-required-message="Please enter a message."></textarea>
+                                        <p class="help-block text-danger"></p>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="col-lg-12 text-center">
+                                    <div id="success"></div>
+                                    <button type="submit" class="btn btn-xl">Send Message</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <span class="copyright">Copyright © Your Website 2014</span>
+                    </div>
+                    <div class="col-md-4">
+                        <ul class="list-inline social-buttons">
+                            <li><a href="#"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <ul class="list-inline quicklinks">
+                            <li><a href="#">Privacy Policy</a>
+                            </li>
+                            <li><a href="#">Terms of Use</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Portfolio Modals -->
+        <!-- Use the modals below to showcase details about your portfolio projects! -->
+
+        <!-- Portfolio Modal 1 -->
+        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <h2>Barcardi NH7 Weekender</h2>
+                                <p class="item-intro text-muted">Pune, Maharastra</p>
+                                <img class="img-responsive" src="images/8.jpg" alt="">
+                                <p>NH7 Weekender is an annual, multi-city and multi-genre, music and comedy festival
+                                    held in India. It is created by Only Much Louder (OML) and is among the largest
+                                    South Asian arts festivals. It began in Pune, Maharashtra, India, as a three-day,
+                                    multi-genre, music festival in 2010. Since 2012 it has expanded to multiple cities.
+                                    In 2017, the lineup added comedy. Its title sponsor has been Bacardi since
+                                    inception.</p>
+                                <p>
+                                    The festival is held between October and December, and hosted in multiple cities
+                                    alongside its flagship event in Pune. Delhi NCR, Bengaluru, Kolkata, Hyderabad, and
+                                    Shillong have host the festival. The lineup includes a mix of, established and
+                                    emerging, sub-continental and global artists.
+                                </p>
+                                <ul class="list-inline">
+                                    <li>Date: July 2019</li>
+                                    <li>Location: Pune, Maharastra</li>
+                                </ul>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i
+                                        class="fa fa-times"></i> Close Event</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Portfolio Modal 2 -->
+        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <div class="modal-body">
+                                <h2>Saarang</h2>
+                                <p class="item-intro text-muted">Chennai, Madras</p>
+                                <img class="img-responsive img-centered" src="images/4.jpg" alt="">
+                                <p>Saarang is the annual social and cultural festival of IIT Madras. It is a 5 day long
+                                    festival usually in the second week of the year. Founded in 1974, Saarang is the
+                                    second oldest college festival in India. It was started in the name of 'Mardi
+                                    Gras' with a small number of quizzes and music events. It adopted the name
+                                    'Saarang' and grew with the help of corporate sponsorship, collaboration with
+                                    large-scale event organizers and international artists.</p>
+                                <p>Saarang is a not-for-profit, entirely student-run, ISO 9001:2015 organisation. All
+                                    organising members of the festival are current students of IIT Madras. 450
+                                    coordinators are organised as per function, in 12 departments, each headed by a
+                                    'core coordinator'. The 12 departments are led by the 2 cultural secretaries, who
+                                    are elected by the institute annually in March.</p>
+                                <ul class="list-inline">
+                                    <li>Date: April 2018</li>
+                                    <li>Location: Madras, Chennai</li>
+                                </ul>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i
+                                        class="fa fa-times"></i> Close Event</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Portfolio Modal 3 -->
+        <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <h2>Sulafest</h2>
+                                <p class="item-intro text-muted">Nashik, Maharastra</p>
+                                <img class="img-responsive img-centered" src="images/sula.jpg" alt="">
+                                <p>SulaFest is a Gourmet World Music Festival held at Nashik Vineyards in Maharashtra.
+                                    The combination of soothing music and quality wine results in only one thing: an
+                                    abundance of fun. With headlining acts from a wide range of international and Indian
+                                    music artists, this year, SulaFest promises to be bigger and better. This is no
+                                    surprise as the last so many years of the fest was a complete sell-out</p>
+                                <p>SulaFest is all about indulging yourself! Head over to SulaFest Bazaar for an amazing
+                                    selection of gourmet food, drinks, quirky merchandise from funky brands, and fun
+                                    games and activities. The food includes a plethora of cuisines, many from renowned
+                                    restaurants such as Little Italy and Soma.
+                                </p>
+                                <ul class="list-inline">
+                                    <li>Date: August 2018</li>
+                                    <li>Location: Nashik, Maharastra</li>
+                                </ul>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i
+                                        class="fa fa-times"></i> Close Event</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Portfolio Modal 4 -->
+        <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <h2>Sunburn</h2>
+                                <p class="item-intro text-muted">Sunburn Arena, Delhi</p>
+                                <img class="img-responsive img-centered" src="images/5.jpg" alt="">
+                                <p>Sunburn, a Percept Intellectual Property, is Asia’s Premiere Electronic Dance Music
+                                    (EDM) Festival, and is ranked amongst the world’s biggest music festivals. Started
+                                    in 2007 as a 3 day music festival in Goa, Sunburn has grown to become an
+                                    aspirational lifestyle brand boasting an eclectic mix of music, entertainment,
+                                    experiences and celebration that has seeded music tourism in India. Over the past
+                                    decade, Sunburn has brought together renowned International and Indian artists to
+                                    entertain hundreds of thousands of dance music lovers across the country and
+                                    overseas, and positioned India as a prime dance festival destination to the world.
+                                </p>
+                                <p>The Sunburn Festival, Sunburn Reload, Sunburn Arena, Sunburn City Festival and
+                                    Sunburn Campus formats have enabled a wide geographical and demographic reach pan
+                                    India and abroad. Sunburn has the distinction of having brought down to India the
+                                    world’s top 10 DJs, including Swedish House Mafia, Martin Garrix, Tiesto, Avicii,
+                                    Hardwell, Deadmau5, Armin van Buuren, David Guetta, Afrojack, Above & Beyond, The
+                                    Chainsmokers, Dimitri Vegas & Like Mike, Marshmello, Paul Van Dyk, Skazi, Pete Tong,
+                                    Dash Berlin, and Nicky Romero.
+                                </p>
+                                <ul class="list-inline">
+                                    <li>Date: May 2019</li>
+                                    <li>Location: Sunburn Arena, Delhi</li>
+                                </ul>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i
+                                        class="fa fa-times"></i> Close Event</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Portfolio Modal 5 -->
+        <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <h2>VH1 Supersonic</h2>
+                                <p class="item-intro text-muted">Pune, Maharastra</p>
+                                <img class="img-responsive img-centered" src="images/9.jpg" alt="">
+                                <p>It started out as an idea on a notebook, to be India’s biggest EDM festival and in
+                                    2013, we turned that scribble into a phenomenon. After bringing some of the best
+                                    international EDM acts to India, VH1 Supersonic has gone on to become the country’s
+                                    biggest multi-genre experiential festival. From Marshmello to Incubus to Nucleya,
+                                    the musical universe starts from VH1 Supersonic and ends at infinity.</p>
+                                <p>At VH1 Supersonic 2021, we will break barriers of the music festival in India. From
+                                    energetic electronic artists to global pioneers of hip-hop music to the best indie
+                                    rock artists, this edition will have everything! The experience, the music, the
+                                    vibe, it’s all better than ever, now fit into 3 days of awesomeness!
+                                </p>
+                                <ul class="list-inline">
+                                    <li>Date: May 2019</li>
+                                    <li>Location: Pune, Maharastra</li>
+                                </ul>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i
+                                        class="fa fa-times"></i> Close Event</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Portfolio Modal 6 -->
+        <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <h2>Mahindra Blues</h2>
+                                <p class="item-intro text-muted">Mumbai, Maharastra</p>
+                                <img class="img-responsive img-centered" src="images/6.jpg" alt="">
+                                <p>February, 2020 marks 10 years of this beautiful experience. The past decade has been
+                                    simply fantastic. We have had the absolute honour of featuring some of the biggest
+                                    and best Blues artist from around the world and we’ve witnessed the growth of our
+                                    own Indian blues scene to a fantastic level. Along the way, we’ve made thousands of
+                                    new friends at the festival, via our radio show, our social media platforms, and
+                                    have generally had a marvellous time. We also managed to bag a few awards for being
+                                    such a cool festival (Woohoo) but the coolest thing of all is meeting you at the
+                                    festival and making sure you are having the best time ever.</p>
+                                <ul class="list-inline">
+                                    <li>Date: February 2020</li>
+                                    <li>Location: Mumbai, Maharastra</li>
+                                </ul>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i
+                                        class="fa fa-times"></i> Close Event</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- jQuery Version 1.11.0 -->
+        <script
+            src="https://raw.githubusercontent.com/IronSummitMedia/startbootstrap/gh-pages/templates/agency/js/jquery-1.11.0.js"></script>
+
+        <!-- Bootstrap Core JavaScript -->
+        <script
+            src="https://raw.githubusercontent.com/IronSummitMedia/startbootstrap/gh-pages/templates/agency/js/bootstrap.min.js"></script>
+
+        <!-- Plugin JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+        <script
+            src="https://raw.githubusercontent.com/IronSummitMedia/startbootstrap/gh-pages/templates/agency/js/classie.js"></script>
+        <script
+            src="https://raw.githubusercontent.com/IronSummitMedia/startbootstrap/gh-pages/templates/agency/js/cbpAnimatedHeader.js"></script>
+
+        <!-- Contact Form JavaScript -->
+        <script
+            src="https://raw.githubusercontent.com/IronSummitMedia/startbootstrap/gh-pages/templates/agency/js/jqBootstrapValidation.js"></script>
+        <script
+            src="https://raw.githubusercontent.com/IronSummitMedia/startbootstrap/gh-pages/templates/agency/js/contact_me.js"></script>
+
+
+        <span
+            style="height: 20px; width: 40px; min-height: 20px; min-width: 40px; position: absolute; opacity: 0.85; z-index: 8675309; display: none; cursor: pointer; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAUCAYAAAD/Rn+7AAADU0lEQVR42s2WXUhTYRjHz0VEVPRFUGmtVEaFUZFhHxBhsotCU5JwBWEf1EWEEVHQx4UfFWYkFa2biPJiXbUta33OXFtuUXMzJ4bK3Nqay7m5NeZq6h/tPQ+xU20zugjOxR/+7/O8539+5znnwMtNTExwJtMb3L/fiLv3botCSmUjeCaejTOb39AiFothfHxcFIrHY8RksZjBsckJcOIRMfFsHD/SsbExUYpnI8DR0dGUGjSb0byhEJp5Uqg5CTSzc2CQleJbMEj9/ywBcGRkJEk9DQqouEVQT1sK444yWI9UonmTjGqauVLEIlHa9x8lAMbj8SSpp0rwKGMVvg8P46vbg0C7na8z8JsMcgHe7jlEa+edRhiLy8n/TUMfu6EvLElk+U0WtGwrTrdfAGQf5J8iiK4LVzDU28t8JtMSocf8E+l68myaNFXm/6rXslLK7ay5TOunuRvZWpJuvwAYjUaTpOIWoquuAZ219RTaxKYp9BbjycoN5FvL9qH9TBX5rvoGdJythvXYSTxdtRnWylO/ZdqrLsGwszzhWQ593z2KlAwCYCQSSZJ6ehZ0W7bD9VBLgN0NCqr3qR7R2rBrL3pu3Sb/7nDlz2uy6cG0OXk0GTbZXzNp8trsPAQdTj6frlWzN2DcXZGKQQAMh8NJ6rpyHe+PnkCr/CAFdZyvpfpjuvkifLF9wIt1Wwlo0OHie1RvWrKa93RjzfzliTzPKz3ltB0/Tevmwp14wGUgHAzSOoUEwFAolFaaBSuhnslPRkJexUJtZ6v5HtUeLswl33n1BgEY5fvhs9sJ3FAiT+QYyyvoAQJuD0KBAFRTJNAuz5/s3gJgMBhMJwrVFRThM5tY5zUF/A4X1f2fvQTRLCuBreoim0YmAbqNJryvPEXeeq46kaNdkQ/1HCncbJKPs9ZSv2VHGfWsZ2hfkhKAfr8/pdxWKx4wwD69PmVfNSOL+lr2w+gYqHpWDtXt1xQ8AMlWU0e1lqLd/APRHoP8AJqWrQG9gYxcPMsvSJUvAA4MDKTUJ7MZLaVy8v+qT21tcDx/OemePr0RTkNrur4A6PP5xCgBsL+/X4wiQDpuuVxOeL1eMYmYeDY6sOp0z+B0OuHxeEQhxkJMFosJiSO/UinOI/8Pc+l7KKArAT8AAAAASUVORK5CYII=);"></span>
+    </body>
+    <!-- partial -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script>
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
