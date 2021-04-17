@@ -1,7 +1,9 @@
 const express = require('express')
 const router = express.Router();
 const Manager = require('../models/manager')
-const {isMLoggedIn, isSLoggedIn} = require('../middleware')
+const {isMLoggedIn, isSLoggedIn ,requireSlogin, requireMlogin} = require('../middleware')
+const bcrypt = require('bcrypt')
+
 const passport = require('passport')
 
 
@@ -9,21 +11,30 @@ router.get('/register', function (req, res) {
     req.flash('success', 'Login or SignUp to continue')
     res.render('managerRegister')
 })
-router.post('/register', async function (req, res, next) {
-    const { email, username, password } = req.body;
-    const user = new Manager({ email, username });
-    const registeredUser = await Manager.register(user, password);
-    req.login(registeredUser, function (err) {
-        if (err) return next(err);
-        req.flash('success', 'Welcome')
-        res.redirect('/manager')
+router.post('/register', async function (req, res) {
+    const { username, password,email } = req.body;
+    const code = await bcrypt.hash(password, 12);
+    const user = new Manager({
+        username,
+        password: code,
+        email
     })
-})
-router.post('/login', passport.authenticate('local', { failureFlash: true, failureRedirect: '/manager/register' }), async function (req, res) {
-    req.flash('success', 'Welcome back')
+    await user.save();
+    req.session.user_id = user._id;
     res.redirect('/manager')
 })
-router.get('/',isMLoggedIn, function(req,res){
+router.post('/login', async function (req, res) {
+    const { username, password } = req.body;
+    const founduser = await Manager.findAndValidate(username, password);
+    if (founduser) {
+        req.session.user_id = founduser._id;
+        res.redirect('/manager')
+    }
+    else {
+        res.redirect('/register')
+    }
+})
+router.get('/',requireMlogin, function(req,res){
     res.render('manager')
 })
 module.exports = router;

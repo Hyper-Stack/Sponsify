@@ -16,3 +16,15 @@ module.exports.isSLoggedIn = function(req,res,next){
     }
     next();
 }
+module.exports.requireMlogin = function(req,res,next){
+    if(!req.session.user_id){
+        return res.redirect('/manager/register')
+    }
+    next();
+}
+module.exports.requireSlogin = function(req,res,next){
+    if(!req.session.user_id){
+        return res.redirect('/sponsors/register')
+    }
+    next();
+}

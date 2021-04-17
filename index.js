@@ -10,9 +10,10 @@ const localstrategy = require('passport-local')
 const app = express();
 const Manager = require('./models/manager')
 const Sponsor = require('./models/sponsor')
-const {isMLoggedIn, isSLoggedIn} = require('./middleware')
+const {isMLoggedIn, isSLoggedIn ,requireSlogin, requireMlogin} = require('./middleware')
 const managerRoutes = require('./routes/manager')
 const sponsorRoutes = require('./routes/sponsors')
+const bcrypt = require('bcrypt')
 app.engine('ejs', ejsMate)
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
@@ -34,12 +35,12 @@ app.use(session(sessionconfig))
 app.use(flash())
 app.use(passport.initialize());
 app.use(passport.session())
-passport.use(new localstrategy(Manager.authenticate()));
-passport.serializeUser(Manager.serializeUser());
-passport.deserializeUser(Manager.deserializeUser());
-passport.use(new localstrategy(Sponsor.authenticate()));
-passport.serializeUser(Sponsor.serializeUser());
-passport.deserializeUser(Sponsor.deserializeUser());
+// passport.use(new localstrategy(Manager.authenticate()));
+// passport.serializeUser(Manager.serializeUser());
+// passport.deserializeUser(Manager.deserializeUser());
+// passport.use(new localstrategy(Sponsor.authenticate()));
+// passport.serializeUser(Sponsor.serializeUser());
+// passport.deserializeUser(Sponsor.deserializeUser());
 app.use(function(req,res,next){
     res.locals.success = req.flash('success');
     res.locals.error = req.flash('error');

@@ -1,29 +1,40 @@
 const express = require('express')
 const router = express.Router();
 const Sponsor = require('../models/sponsor')
-const {isMLoggedIn, isSLoggedIn} = require('../middleware')
+const {isMLoggedIn, isSLoggedIn ,requireSlogin, requireMlogin} = require('../middleware')
+const bcrypt = require('bcrypt')
+
 const passport = require('passport')
+
 
 router.get('/register', function (req, res) {
     req.flash('success', 'Login or SignUp to continue')
     res.render('sponsorsRegister')
 })
-router.post('/register', async function (req, res, next) {
-    const { email, username, password } = req.body;
-    const user = new Sponsor({ email, username });
-    const registeredUser = await Sponsor.register(user, password);
-    req.login(registeredUser, function (err) {
-        if (err) return next(err);
-        req.flash('success', 'Welcome')
-        res.redirect('/sponsors')
+router.post('/register', async function (req, res) {
+    const { username, password,email } = req.body;
+    const code = await bcrypt.hash(password, 12);
+    const user = new Sponsor({
+        username,
+        password: code,
+        email
     })
-})
-router.post('/login', passport.authenticate('local', { failureFlash: true, failureRedirect: '/sponsors/register' }), async function (req, res) {
-    req.flash('success', 'Welcome back')
+    await user.save();
+    req.session.user_id = user._id;
     res.redirect('/sponsors')
 })
-
-router.get('/',isSLoggedIn, function(req,res){
+router.post('/login', async function (req, res) {
+    const { username, password } = req.body;
+    const founduser = await Sponsor.findAndValidate(username, password);
+    if (founduser) {
+        req.session.user_id = founduser._id;
+        res.redirect('/sponsors')
+    }
+    else {
+        res.redirect('/register')
+    }
+})
+router.get('/',requireSlogin, function(req,res){
     res.render('sponsors')
 })
 module.exports = router;
