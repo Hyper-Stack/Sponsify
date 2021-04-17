@@ -1,3 +1,4 @@
+
 $("#search-icon").click(function() {
     $(".nav").toggleClass("search");
     $(".nav").toggleClass("no-search");
@@ -8,3 +9,4 @@ $("#search-icon").click(function() {
      $(".nav").toggleClass("mobile-nav");
      $(this).toggleClass("is-active");
   });
+

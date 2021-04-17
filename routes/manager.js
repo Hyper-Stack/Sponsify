@@ -37,4 +37,7 @@ router.post('/login', async function (req, res) {
 router.get('/',requireMlogin, function(req,res){
     res.render('manager')
 })
+router.get('/event',requireSlogin, function(req,res){
+    res.render('eventDetails')
+})
 module.exports = router;

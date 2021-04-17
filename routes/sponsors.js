@@ -31,10 +31,13 @@ router.post('/login', async function (req, res) {
         res.redirect('/sponsors')
     }
     else {
-        res.redirect('/register')
+        res.redirect('/sponsors/register')
     }
 })
 router.get('/',requireSlogin, function(req,res){
     res.render('sponsors')
+})
+router.get('/sponsorship',requireSlogin, function(req,res){
+    res.render('sponsorDetails')
 })
 module.exports = router;
