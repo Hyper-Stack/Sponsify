@@ -9,7 +9,6 @@ const managerSchema = new mongoose.Schema({
     password:{
         type: String,
         required: [true, "Password can't be blank"],
-        unique:true
     },
     email:{
         type: String,
