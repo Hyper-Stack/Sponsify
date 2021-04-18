@@ -40,4 +40,7 @@ router.get('/',requireSlogin, function(req,res){
 router.get('/sponsorship',requireSlogin, function(req,res){
     res.render('sponsorDetails')
 })
+router.get('/contact',function(req,res){
+    res.render('scontact')
+})
 module.exports = router;
