@@ -3,8 +3,9 @@ const router = express.Router();
 const Manager = require('../models/manager')
 const {isMLoggedIn, isSLoggedIn ,requireSlogin, requireMlogin} = require('../middleware')
 const bcrypt = require('bcrypt')
-
+const jwt = require('jsonwebtoken');
 const passport = require('passport')
+var cookieParser = require('cookie-parser');
 
 
 router.get('/register', function (req, res) {
@@ -37,7 +38,11 @@ router.post('/login', async function (req, res) {
 router.get('/',requireMlogin, function(req,res){
     res.render('manager')
 })
-router.get('/event',requireSlogin, function(req,res){
+router.get('/event',requireMlogin, function(req,res){
     res.render('eventDetails')
+})
+router.get('/logout', function(req,res){
+    req.session.user_id=null;
+    res.redirect('/')
 })
 module.exports = router;

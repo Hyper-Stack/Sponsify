@@ -16,6 +16,7 @@ const managerRoutes = require('./routes/manager')
 const sponsorRoutes = require('./routes/sponsors')
 const mailRoute = require('./routes/mailRoute');
 const bcrypt = require('bcrypt')
+var cookieParser = require('cookie-parser');
 app.engine('ejs', ejsMate)
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
@@ -37,6 +38,8 @@ app.use(session(sessionconfig))
 app.use(flash())
 app.use(passport.initialize());
 app.use(passport.session())
+app.use(cookieParser());
+
 // passport.use(new localstrategy(Manager.authenticate()));
 // passport.serializeUser(Manager.serializeUser());
 // passport.deserializeUser(Manager.deserializeUser());
@@ -81,14 +84,6 @@ app.get('/', function (req, res) {
 //     delete req.session.returnto;
 //     res.redirect(url)
 // })
-
-app.get('/logout', function (req, res) {
-    req.logout();
-    res.redirect('/')
-    req.flash('success', 'Logged out successfully');
-})
-
-
 
 app.listen(3000, function () {
     console.log('On port 3000')
