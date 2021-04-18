@@ -5,7 +5,8 @@
   font-family: 'Lato', 'Arial', sans-serif;
 }
 body{
-    background-color:rgb(70, 67, 67);
+    background-image:url('../images/events/bg4.jpg');
+    /* background-repeat: no-repeat; */
 }
 /* HEADINGS */
 

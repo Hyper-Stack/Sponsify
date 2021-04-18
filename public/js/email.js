@@ -107,5 +107,5 @@ H.css({
  'transition':'all 1s',
  'transform':'rotateZ(180deg)'
 });
-document.getElementById("info").innerHTML = "Contact Me!";
+document.getElementById("info").innerHTML = "Contact Manager!";
 });

@@ -43,4 +43,8 @@ router.get('/sponsorship',requireSlogin, function(req,res){
 router.get('/contact',function(req,res){
     res.render('scontact')
 })
+router.post('/',function(req,res){
+    req.flash('success', 'Mail sent successfully')
+    res.redirect('/sponsors')
+})
 module.exports = router;
