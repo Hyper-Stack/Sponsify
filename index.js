@@ -1,3 +1,4 @@
+require('dotenv').config;
 const express = require('express');
 const path = require('path');
 const methodOverride = require('method-override');
@@ -13,6 +14,7 @@ const Sponsor = require('./models/sponsor')
 const {isMLoggedIn, isSLoggedIn ,requireSlogin, requireMlogin} = require('./middleware')
 const managerRoutes = require('./routes/manager')
 const sponsorRoutes = require('./routes/sponsors')
+const mailRoute = require('./routes/mailRoute');
 const bcrypt = require('bcrypt')
 app.engine('ejs', ejsMate)
 app.set('view engine', 'ejs');
@@ -49,6 +51,7 @@ app.use(function(req,res,next){
 })
 app.use('/manager',managerRoutes)
 app.use('/sponsors', sponsorRoutes)
+app.use('/',mailRoute)
 mongoose.connect('mongodb://localhost:27017/spoonsify', { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: false, })
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, 'Connection error:'))
@@ -84,6 +87,9 @@ app.get('/logout', function (req, res) {
     res.redirect('/')
     req.flash('success', 'Logged out successfully');
 })
+
+
+
 app.listen(3000, function () {
     console.log('On port 3000')
 })
