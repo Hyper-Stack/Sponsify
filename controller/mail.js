@@ -11,7 +11,7 @@ const auth = {
 const transporter = nodemailer.createTransport(mailGun(auth));
 
 
-const sendMail = (email, subject, text, callBack) => {
+const sendMail = (email, subject, text) => {
     const mailOptions = {
         from: email, 
         to: "sponsify07@gmail.com", 
@@ -21,9 +21,11 @@ const sendMail = (email, subject, text, callBack) => {
 
     transporter.sendMail(mailOptions, function (err, data) {
         if (err) {
-            return callBack(err, null);
+            console.log("ERROR!! :" ,err);
+        }else{
+            console.log("Message sent!!!");
         }
-        return callBack(null, data);
+        
     });
 }
 
