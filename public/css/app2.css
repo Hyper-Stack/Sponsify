@@ -1607,3 +1607,29 @@ h3 {
 .mc-btn-action{
   border:5px solid white !important;
 }
+.mc-description{
+  padding-top: 3em !important;
+  height: 100%;
+}
+.manager-icon{
+  width: 26px;
+  color: white !important;
+}
+.mc-footer a{
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 50%;
+  height: 45px;
+  width:45px;
+  margin-bottom: 0 !important;
+}
+.mc-footer{
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding:0 !important;
+}
+.fa-arrow-left{
+  color: white !important;;
+}
