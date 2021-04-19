@@ -7,7 +7,7 @@ const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken');
 const passport = require('passport')
 var cookieParser = require('cookie-parser');
-
+const Events = require('../models/events')
 
 router.get('/register', function (req, res) {
     req.flash('success', 'Login or SignUp to continue')
@@ -39,8 +39,10 @@ router.post('/login', async function (req, res) {
         res.redirect('/sponsors/register')
     }
 })
-router.get('/',requireSlogin, function(req,res){
-    res.render('sponsors')
+router.get('/',requireSlogin,async function(req,res){
+    const events = await Events.find({});
+    console.log(events)
+    res.render('sponsors', {events})
 })
 router.get('/sponsorship',requireSlogin, function(req,res){
     res.render('sponsorDetails')
