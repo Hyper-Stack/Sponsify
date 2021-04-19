@@ -67,7 +67,7 @@ W.click(function () {
         H.css({
             'transition': 'all .5s'
         });
-        document.getElementById("info").innerHTML = "P:6232151111";
+        // document.getElementById("info").innerHTML = "P:62321s111";
         closed = true;
     }
     else {
