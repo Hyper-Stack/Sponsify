@@ -38,6 +38,78 @@
   </div>
   <%- include('partials/flash')%>
 
+  <!--Add Cards which can be modified by the manager -->
+  <% for(let event of activeEvents){ %>
+      <div class="wrapper">
+        <div class="container">
+    
+          <article class="gallery-card">
+            <form action="/manager/Delete" method="POST">
+              <input value="<%= event._id%>" style="visibility:hidden;" name="Delete">
+              <button class="close" type="submit"><i class="fa fa-times"></i></button>  
+          </form>
+            
+    
+            <section class="gallery-image">
+            </section>
+            <section class="gallery-info">
+    
+              <h2 class="gallery-title"><%= event.EventName %></h2>
+    
+              <!-- <div class="gallery-author">
+                <img src="https://s.cdpn.io/profiles/user/1454190/80.jpg?1548321854" alt="">
+                <a href="#">Manager</a>
+              </div> -->
+              <p class="gallery-descr">
+                Description: <%= event.EventDescription %>
+              </p>
+              <p>email : </p>
+              <p>location : <%= event.Venue %></p>
+              <p>contact : </p>
+              <p>target audience : </p>
+              <p>footfall : </p>
+              <p>website : <%= event.Website %></p>
+              <p>fb : <%= event.Facebook %></p>
+              <p>image : <%= event.Image %></p>
+              <hr>
+    
+              <div class="gallery-comments">
+                <h1>List of Interested Sponsors</h1>
+                <!-- <div class="comment">
+                  <a>John Doe: </a><span>Looks tasty!</span>
+                </div>
+                <div class="comment">
+                  <a>Jiří Šrytr: </a><span>Pěkněj frontend</span>
+                </div>
+                <div class="comment">
+                  <a>Martin Pekáč: </a><span>Dal bich sy 👍</span>
+                </div>
+                <div class="comment">
+                  <a>Pepik J.: </a><span>Pěkně no...</span>
+                </div>
+                <div class="comment">
+                  <a>Martin Teplý: </a><span>Dobrá restaurace! 😂</span>
+                </div>
+                <div class="comment">
+                  <a>cepinda.: </a><span>Jinambuv dortík je nej 👌</span>
+                </div>
+                <div class="comment">
+                  <a>Jan P.: </a><span>kolik to stojí</span>
+                </div> -->
+              </div>
+              <form action="/manager/Edit" method="POST">
+                  <input value="<%= event._id%>" style="visibility:hidden;" name="Edit">
+                  <button type="submit"> edit</button>
+              </form>
+              
+            </section>
+          </article>
+    
+        </div>
+      </div>
+      <% } %>
+     
+
     <!-- partial -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"

@@ -1,4 +1,9 @@
 const express = require('express')
+
+const app = express()
+
+const methodOverride = require('method-override');
+app.use(methodOverride('_method'))
 const router = express.Router();
 const Manager = require('../models/manager')
 const {isMLoggedIn, isSLoggedIn ,requireSlogin, requireMlogin} = require('../middleware')
@@ -35,9 +40,31 @@ router.post('/login', async function (req, res) {
         res.redirect('/register')
     }
 })
-router.get('/',requireMlogin, function(req,res){
-    res.render('manager')
+
+router.get('/',requireMlogin,async function(req,res){
+    const findUser = await Manager.find({_id :req.session.user_id });
+    const currentevents = findUser[0].activeEvents;
+    const activeEvents = await Event.find({ _id : [...currentevents]});
+     //const activeEvents =  Event.find( { _id : { $all: findUser[0].activeEvents } } )
+    //console.log(activeEvents);
+    res.render('manager',{activeEvents});
 })
+
+router.post('/Delete',async function(req,res) {
+  const DeleteEvent =  req.body.Delete;
+    await Event.deleteOne({_id : DeleteEvent});
+    //console.log(DeleteEvent);
+    res.redirect('/manager');
+})
+
+router.post('/Edit',async function(req,res) {
+    const EditEvent = req.body.Edit;
+    const toeditEvent =  await Event.find({_id : EditEvent});
+    const edit = toeditEvent[0];
+    res.render('edit',{edit})
+    //console.log(edit);
+    })
+
 router.get('/event',requireMlogin, function(req,res){
     res.render('eventDetails')
 })
@@ -45,6 +72,15 @@ router.get('/logout', function(req,res){
     req.session.user_id=null;
     res.redirect('/')
 })
+
+router.patch('/EditEvent',async function(req,res){
+    const editedEvent = req.body;
+    const id = editedEvent._id;
+   const updateEvent = await Event.findByIdAndUpdate(id , editedEvent , {new : true})
+    console.log(updateEvent);
+    res.redirect('/manager');
+})
+
 router.post('/newEvent',async function(req,res){
     const newEvent = new Event(req.body);
     await newEvent.save()
