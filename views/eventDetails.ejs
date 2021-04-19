@@ -12,53 +12,74 @@
 
 <body>
     <!-- partial:index.partial.html -->
-    <form autocomplete="off">
-        <input id="input-1" type="text" placeholder="John Doe" required autofocus />
+    <form autocomplete="off" action= "/manager/newEvent" method="POST">
+        <input id="input-1" type="text" name = "EventName" placeholder="e.g., Sunburn Goa" required autofocus />
         <label for="input-1">
-            <span class="label-text">Full Name</span>
+            <span class="label-text">Event Name</span>
             <span class="nav-dot"></span>
             <div class="signup-button-trigger">Sign Up</div>
         </label>
-        <input id="input-2" type="email" placeholder="email@address.com" required />
+        
+        <input id="input-2" type="text" name = "Venue" placeholder="Vegator Beach, Goa" required />
         <label for="input-2">
-            <span class="label-text">Email</span>
-            <span class="nav-dot"></span>
-        </label>
-        <input id="input-3" type="text" placeholder="Event" required />
-        <label for="input-3">
-            <span class="label-text">Event Name</span>
-            <span class="nav-dot"></span>
-        </label>
-        <input id="input-4" type="text" placeholder="Mumbai, Maharastra" required />
-        <label for="input-4">
             <span class="label-text">Venue</span>
             <span class="nav-dot"></span>
         </label>
-        <input id="input-5" type="text" placeholder="Description" required />
-        <label for="input-5">
+
+        <input id="input-3" type="text" name = "EventDescription" placeholder="Description" required />
+        <label for="input-3">
             <span class="label-text">Event Description</span>
             <span class="nav-dot"></span>
         </label>
-        <input id="input-6" type="text" placeholder="Ex:-Corporate, Fests, Community" required />
-        <label for="input-6">
+
+        <input id="input-4" type="text" name = "EventType" placeholder="Cutural, EDM, Charity....." required />
+        <label for="input-4">
             <span class="label-text">Event Type</span>
             <span class="nav-dot"></span>
         </label>
-        <input id="input-7" type="text" placeholder="Expected audience" required />
+
+        <input id="input-5" type="text" name = "Website" placeholder="www.event.com" required />
+        <label for="input-5">
+            <span class="label-text">Website</span>
+            <span class="nav-dot"></span>
+        </label>
+        <input id="input-6" type="text" name = "Image" placeholder="unsplash.com" required />
+        <label for="input-6">
+            <span class="label-text">Tmage Link</span>
+            <span class="nav-dot"></span>
+        </label>
+        <input id="input-7" type="text" name = "Facebook" placeholder="www.facebook.com/-----" required />
         <label for="input-7">
+            <span class="label-text">Facebook Link</span>
+            <span class="nav-dot"></span>
+        </label>
+        <input id="input-8" type="text" name = "TargetAudience" placeholder="Youth, Kids, Handicapped....." required />
+        <label for="input-8">
             <span class="label-text">Target Audience</span>
             <span class="nav-dot"></span>
         </label>
-        <input id="input-8" type="text" placeholder="(+91)" required />
-        <label for="input-8">
-            <span class="label-text">Contact No.</span>
+
+        <input id="input-9" name = "ExpectedFootfall" placeholder="e.g., 1,00,000" required />
+        <label for="input-9">
+            <span class="label-text">Expected Footfall</span>
             <span class="nav-dot"></span>
         </label>
+
+        <input id="input-10" type="email" name = "Email" placeholder="goa@sunburn.com" required />
+        <label for="input-10">
+            <span class="label-text">E-mail to connect</span>
+            <span class="nav-dot"></span>
+        </label>
+
+        <input id="input-11" name = "Contact" placeholder="+91" required />
+        <label for="input-11">
+            <span class="label-text">Contact no.</span>
+            <span class="nav-dot"></span>
+        </label>
+        
         <button type="submit">Submit Event Details</button>
         <p class="tip">Press Tab</p>
         <!-- partial -->
         <script src="./script.js"></script>
-
 </body>
-
 </html>

@@ -6,8 +6,8 @@ const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken');
 const passport = require('passport')
 var cookieParser = require('cookie-parser');
-
-
+const Event = require('../models/events')
+// var userId = 
 router.get('/register', function (req, res) {
     req.flash('success', 'Login or SignUp to continue')
     res.render('managerRegister')
@@ -44,5 +44,13 @@ router.get('/event',requireMlogin, function(req,res){
 router.get('/logout', function(req,res){
     req.session.user_id=null;
     res.redirect('/')
+})
+router.post('/newEvent',async function(req,res){
+    const newEvent = new Event(req.body);
+    await newEvent.save()
+    await Manager.findByIdAndUpdate(req.session.user_id, {$push:{activeEvents:newEvent}})
+    const eventadded = await Event.findById(req.session.user_id).populate('activeEvents');
+    console.log(eventadded);
+    res.redirect('/manager');
 })
 module.exports = router;
