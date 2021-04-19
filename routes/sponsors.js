@@ -22,8 +22,8 @@ router.post('/register', async function (req, res) {
         email
     })
     await user.save();
-    var token = jwt.sign({ _id: user._id }, process.env.SECRET, { expiresIn: "60 days" });
-    res.cookie('nToken', token, { maxAge: 900000, httpOnly: true });
+    // var token = jwt.sign({ _id: user._id }, process.env.SECRET, { expiresIn: "60 days" });
+    // res.cookie('nToken', token, { maxAge: 900000, httpOnly: true });
     req.session.user_id = user._id;
     res.redirect('/sponsors')
 })
