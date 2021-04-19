@@ -7,7 +7,10 @@ const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken');
 const passport = require('passport')
 var cookieParser = require('cookie-parser');
-const Events = require('../models/events')
+const Events = require('../models/events');
+const events = require('../models/events');
+const { findById } = require('../models/events');
+
 
 router.get('/register', function (req, res) {
     req.flash('success', 'Login or SignUp to continue')
@@ -22,8 +25,8 @@ router.post('/register', async function (req, res) {
         email
     })
     await user.save();
-    var token = jwt.sign({ _id: user._id }, process.env.SECRET, { expiresIn: "60 days" });
-    res.cookie('nToken', token, { maxAge: 900000, httpOnly: true });
+    // var token = jwt.sign({ _id: user._id }, process.env.SECRET, { expiresIn: "60 days" });
+    // res.cookie('nToken', token, { maxAge: 900000, httpOnly: true });
     req.session.user_id = user._id;
     res.redirect('/sponsors')
 })
@@ -41,7 +44,7 @@ router.post('/login', async function (req, res) {
 })
 router.get('/',requireSlogin,async function(req,res){
     const events = await Events.find({});
-    console.log(events)
+  //  console.log(events)
     res.render('sponsors', {events})
 })
 router.get('/sponsorship',requireSlogin, function(req,res){
@@ -58,4 +61,23 @@ router.get('/logout', function(req,res){
     req.session.user_id=null;
     res.redirect('/')
 })
+router.get('/cart', requireSlogin, async function(req,res){
+    const findUser = await Sponsor.find({_id :req.session.user_id });
+    const currentevents = findUser[0].cart;
+    const events = await Events.find({ _id : [...currentevents]});
+     //const activeEvents =  Event.find( { _id : { $all: findUser[0].activeEvents } } )
+    //console.log(activeEvents);
+    res.render('cart',{events});
+})
+router.post('/:id/addToCart', requireSlogin, async function(req, res){
+    const {id} = req.params;
+    const newEvent = await Events.findById(id);
+    await (await Sponsor.findByIdAndUpdate(req.session.user_id, {$push:{cart:newEvent}}))
+    // const eventadded = await Events.findById(req.session.user_id).populate("cart");
+    // console.log(eventadded);
+    res.redirect('/sponsors/cart')
+})
+
+
+
 module.exports = router;

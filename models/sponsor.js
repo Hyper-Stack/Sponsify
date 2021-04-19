@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt')
+const event = require('./events');
 const sponsorSchema = new mongoose.Schema({
     username:{
         type: String,
@@ -14,7 +15,13 @@ const sponsorSchema = new mongoose.Schema({
         type: String,
         // required: [true, "Email can't be blank"],
         unique:true
-    }
+    },
+    cart:   [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'event'
+        }
+    ]
 })
 
 sponsorSchema.statics.findAndValidate = async function (username, password){
