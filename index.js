@@ -16,6 +16,11 @@ const managerRoutes = require('./routes/manager')
 const sponsorRoutes = require('./routes/sponsors')
 const mailRoute = require('./routes/mailRoute');
 const bcrypt = require('bcrypt')
+
+//const MongoStore = require('connect-mongo')(session);
+const dbUrl = process.env.dbURL
+//'mongodb://localhost:27017/spoonsify'
+
 var cookieParser = require('cookie-parser');
 app.engine('ejs', ejsMate)
 app.set('view engine', 'ejs');
@@ -24,7 +29,19 @@ app.use(express.urlencoded({ extended: true }))
 app.use(methodOverride('_method'))
 app.use(express.static(path.join(__dirname, 'public')))
 
+// const store = new MongoStore({
+//     url : dbUrl,
+//     secret : 'mysecret',
+//     touchAfter: 24*60*60
+// })
+
+// store.on("error", function(e){
+//     console.log("SESSION STORE ERROR", e)
+// })
+
 const sessionconfig = {
+    //store,
+    //name : 'session',
     secret : 'mysecret',
     resave: false,
     saveUninitialized: true,
@@ -55,7 +72,9 @@ app.use(function(req,res,next){
 app.use('/manager',managerRoutes)
 app.use('/sponsors', sponsorRoutes)
 app.use('/',mailRoute)
-mongoose.connect('mongodb://localhost:27017/spoonsify', { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: false, })
+
+
+mongoose.connect(dbUrl, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: false, })
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, 'Connection error:'))
 db.once("open", function () {
