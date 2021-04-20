@@ -87,6 +87,7 @@ router.get('/profile',async function(req,res){
 router.post('/:id/delete', async function(req,res){
     const {id} = await req.params;
     await (await Manager.findByIdAndUpdate(req.session.user_id, {$pull:{activeEvents:id}}))
+    await Event.deleteOne({_id : id});
     res.redirect('/manager')
     
 })

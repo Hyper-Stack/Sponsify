@@ -71,7 +71,8 @@
                   </div>
                   <div class="item-buttons front-buttons">
                     <button class="btn-details grey" aria-label="Learn more about the band and venue"> Details</button>
-                    <form action='/manager/Edit' method="post">
+                    <form action='/manager/Edit' method="post" style="height: 0;">
+                      <input value="<%= event._id%>" style="visibility:hidden;height: 0; width:0; padding:0;" name="Edit">
                       <button class="btn-tickets blue on-back" type="submit">EDIT</button>
                     </form>
                   </div>

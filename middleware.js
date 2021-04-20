@@ -14,6 +14,7 @@ module.exports.isSLoggedIn = function(req,res,next){
         req.flash('error', 'You must be signed in')
         return res.redirect('/sponsors/register')
     }
+    
     next();
 }
 module.exports.requireMlogin = function(req,res,next){
