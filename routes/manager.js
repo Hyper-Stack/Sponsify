@@ -91,4 +91,7 @@ router.post('/:id/delete', async function(req,res){
     res.redirect('/manager')
     
 })
+router.get('/about', function(req,res){
+    res.render('mabout')
+})
 module.exports = router;

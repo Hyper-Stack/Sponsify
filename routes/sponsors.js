@@ -88,6 +88,8 @@ router.get('/profile',async function(req,res){
     console.log(user);
     res.render('sprofile',{user})
 })
-
+router.get('/about', function(req,res){
+    res.render('sabout')
+})
 
 module.exports = router;
