@@ -27,10 +27,7 @@ const managerSchema = new mongoose.Schema({
 managerSchema.statics.findAndValidate = async function (username, password) {
     const foundUser = await this.findOne({ username });
     const isvalid = await bcrypt.compare(password, foundUser.password);
-    if(!isvalid){
-        req.flash('success','Invalid Credentials');
-        res.redirect('/manager/register')
-    }return foundUser;
+    return isvalid ? foundUser : false;
 }
 managerSchema.pre('save', function (next) {
     if (!this.isModified('password')) return next();
