@@ -23,19 +23,21 @@ router.post('/register', async function (req, res) {
         password: code,
         email
     })
-    await user.save();
+    await user.save()
+        .catch(()=>{res.send("username or email already registered")});
     req.session.user_id = user._id;
     res.redirect('/manager')
 })
 router.post('/login', async function (req, res) {
     const { username, password } = req.body;
-    const founduser = await Manager.findAndValidate(username, password);
+    const founduser = await Manager.findAndValidate(username, password)
+                        .catch((err)=>{console.log(err); res.send("Invalid Credentials")});
     if (founduser) {
         req.session.user_id = founduser._id;
         res.redirect('/manager')
     }
     else {
-        res.redirect('/register')
+        res.send("Invalid Credentials")
     }
 })
 
