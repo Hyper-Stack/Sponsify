@@ -151,7 +151,7 @@ const eventArray = [
         description: "Apex India has great pride in our global associations with Hospitality leaders in different technology sectors.Apex India has been the major contributor in Vingcard sales in India with continuous good performance and also was named the best global distributor among 166 countries in 2011 in shanghai.",
         website: "",
         fb: "",
-        image: 'https://lh3.googleusercontent.com/proxy/GcY-9P4Bn-ELwjQ8KZjQ1izfisPLq7cz4wbZJsYwL3uTIoCEo92CG2ILJvKgfDSBOX-gXK9oXlMe5ERh6WX59HXhZiCu6YY7Y7mitYY_1A4' ,
+        image: 'https://pbs.twimg.com/media/EhkK4dUWoAIYAhq.jpg' ,
         type: "Exports and sales",
         email: "as77jadoun@gmail.com",
         mobile: '6232151111',

@@ -28,7 +28,7 @@
         </div>
         <ul class="nav no-search" style="left: 0px; margin-right: 25px;">
           <!-- <li class="nav-item"><a href="#">Home</a></li> -->
-          <li class="nav-item"><a href="#">About</a></li>
+          <li class="nav-item"><a href="/sponsors/about">About</a></li>
           <li class="nav-item"><a href="sponsors/cart">Cart</a></li>
           <li class="nav-item"><a href="/sponsors/profile">Profile</a></li>
           <li class="nav-item"><a href="/sponsors/logout">Logout</a></li>
@@ -37,6 +37,10 @@
     </div>
   </div>
   <%- include('partials/flash')%>
+    <div class="manager-head">
+      <h1 class="top-head">Upcoming Events</h1>
+    </div>
+    
     <section class="container" style="margin-top: 2em;">
       <div class="row active-with-click">
         <% for(let event of events){ %>

@@ -10,6 +10,8 @@
     integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
     integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/app2.css">
 
 </head>
@@ -28,7 +30,7 @@
         </div>
         <ul class="nav no-search" style="left: 0px; text-align: center;">
           <!-- <li class="nav-item"><a href="#">Home</a></li> -->
-          <li class="nav-item"><a href="#">About</a></li>
+          <li class="nav-item"><a href="/manager/about">About</a></li>
           <li class="nav-item"><a href="/manager/event">Add Event</a></li>
           <li class="nav-item"><a href="/manager/profile">Profile</a></li>
           <li class="nav-item"><a href="/manager/logout">Logout</a></li>
@@ -36,97 +38,109 @@
       </nav>
     </div>
   </div>
-  <%- include('partials/flash')%>
-    <main class="grid-container">
-      <% for(let event of activeEvents){ %>
-        <div class="grid-item">
-          <div class="wrapper">
-            <div class="card-container">
-              <div class="flip-animation">
-                <!--Front of the card-->
-                <section class="item-card">
-                  <div class="item-summary">
-                    <h2 class="title">
-                      <%= event.EventName %>
-                    </h2>
-                    <p class="venue"> </p>
-                    <address class="address">
-                      <p class="street-address">
-                        <%= event.Email %>
+  <!-- <%- include('partials/flash')%> -->
+  <div class="manager-head">
+    <h1 class="top-head">Your Upcoming Events</h1>
+  </div>
+  <%if(activeEvents[0]==null){%>
+    <div style="text-align: center;">
+      <i id="err-icon" class="fa fa-exclamation-circle"></i>
+      <h1 style="margin-top: 0.8em; font-size: 3em; font-weight: 800;">Events Not Found!</h1>
+      <p class="e404">Add Some Events being managed by you</p>
+    </div>
+    <%}%>
+      <main class="grid-container">
+        <% for(let event of activeEvents){ %>
+          <div class="grid-item">
+            <div class="wrapper">
+              <div class="card-container">
+                <div class="flip-animation">
+                  <!--Front of the card-->
+                  <section class="item-card">
+                    <div class="item-summary">
+                      <h2 class="title">
+                        <%= event.EventName %>
+                      </h2>
+                      <p class="venue"> </p>
+                      <address class="address">
+                        <p class="street-address">
+                          <%= event.Email %>
+                        </p>
+                        <p class="locality">
+                          <%= event.Contact %>
+                        </p>
+                      </address>
+                    </div>
+                    <div class="image-wrapper">
+                      <img class="featured-image" src="<%= event.Image %> "
+                        alt="The Paper Kites performing, overlooking a crowd" />
+                    </div>
+                    <div class="item-time-date">
+                      <time class="date" datetime="2018-10-16">
+                        <%= event.Venue %>
+                      </time>
+                      <!-- <time class="time" datetime="19:00">7:00 PM</time> -->
+                    </div>
+                    <div class="item-buttons front-buttons">
+                      <button class="btn-details grey" aria-label="Learn more about the band and venue">
+                        Details</button>
+                      <form action='/manager/Edit' method="post" style="height: 0;">
+                        <input value="<%= event._id%>" style="visibility:hidden;height: 0; width:0; padding:0;"
+                          name="Edit">
+                        <button class="btn-tickets blue on-back" type="submit">EDIT</button>
+                      </form>
+                    </div>
+                  </section>
+                  <!--Back of the card-->
+                  <section class="item-card-details">
+                    <div class="bio-block">
+                      <h2 class="bio-band">
+                        <%= event.EventName %>
+                      </h2>
+                      <h3 class="bio-title">Bio</h3>
+                    </div>
+                    <div class="scroll-block">
+                      <p class="bio-text">
+                        <%= event.EventDescription%>
                       </p>
-                      <p class="locality">
-                        <%= event.Contact %>
+                    </div>
+                    <div class="more-info">
+                      <p>
+                        <a class="info" aria-label="website" href="<%= event.Website %> ">
+                          <%= event.EventName %>Website
+                        </a>
                       </p>
-                    </address>
-                  </div>
-                  <div class="image-wrapper">
-                    <img class="featured-image" src="<%= event.Image %> "
-                      alt="The Paper Kites performing, overlooking a crowd" />
-                  </div>
-                  <div class="item-time-date">
-                    <time class="date" datetime="2018-10-16">
-                      <%= event.Venue %>
-                    </time>
-                    <!-- <time class="time" datetime="19:00">7:00 PM</time> -->
-                  </div>
-                  <div class="item-buttons front-buttons">
-                    <button class="btn-details grey" aria-label="Learn more about the band and venue"> Details</button>
-                    <form action='/manager/Edit' method="post" style="height: 0;">
-                      <input value="<%= event._id%>" style="visibility:hidden;height: 0; width:0; padding:0;" name="Edit">
-                      <button class="btn-tickets blue on-back" type="submit">EDIT</button>
-                    </form>
-                  </div>
-                </section>
-                <!--Back of the card-->
-                <section class="item-card-details">
-                  <div class="bio-block">
-                    <h2 class="bio-band">
-                      <%= event.EventName %>
-                    </h2>
-                    <h3 class="bio-title">Bio</h3>
-                  </div>
-                  <div class="scroll-block">
-                    <p class="bio-text">
-                      <%= event.EventDescription%>
-                    </p>
-                  </div>
-                  <div class="more-info">
-                    <p>
-                      <a class="info" aria-label="website" href="<%= event.Website %> ">
-                        <%= event.EventName %>Website
-                      </a>
-                    </p>
-                    <p>
-                      <a class="info" aria-label="fb" href="#">
-                        <%= event.Facebook %>Facebook
-                      </a>
-                    </p>
-                  </div>
-                  <div class="item-buttons back">
-                    <button class="btn-details grey back-arrow" aria-label="Learn more about the band and venue"
-                      href="#"></button>
+                      <p>
+                        <a class="info" aria-label="fb" href="#">
+                          <%= event.Facebook %>Facebook
+                        </a>
+                      </p>
+                    </div>
+                    <div class="item-buttons back">
+                      <button class="btn-details grey back-arrow" aria-label="Learn more about the band and venue"
+                        href="#"></button>
                       <form style="width: 100%; " action='/manager/<%=event._id%>/delete' method="post">
                         <button style="width: 100%;" class="btn-tickets red on-back" type="submit">DELETE</button>
                       </form>
-                  </div>
-                </section>
+                    </div>
+                  </section>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <% } %>
-    </main>
-    <!--Add Cards which can be modified by the manager -->
+          <% } %>
+      </main>
+      <!--Add Cards which can be modified by the manager -->
 
-    <!-- partial -->
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-      crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-      crossorigin="anonymous"></script>
-    <script src="js/navbar.js"></script>
+      <!-- partial -->
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+      <script src="js/navbar.js"></script>
 
 </body>
 

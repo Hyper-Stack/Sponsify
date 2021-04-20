@@ -24,7 +24,8 @@ router.post('/register', async function (req, res) {
         password: code,
         email
     })
-    await user.save();
+    await user.save()
+        .catch(() => { req.flash('error',"Username or Email already registered");res.redirect('/sponsors/register') });
     // var token = jwt.sign({ _id: user._id }, process.env.SECRET, { expiresIn: "60 days" });
     // res.cookie('nToken', token, { maxAge: 900000, httpOnly: true });
     req.session.user_id = user._id;
@@ -32,13 +33,15 @@ router.post('/register', async function (req, res) {
 })
 router.post('/login', async function (req, res) {
     const { username, password } = req.body;
-    const founduser = await Sponsor.findAndValidate(username, password);
+    const founduser = await Sponsor.findAndValidate(username, password)
+                            .catch((err)=>{console.log(err); req.flash('error',"Invalid Credentials");res.redirect('/sponsors/register')});
     if (founduser) {
         req.session.user_id = founduser._id;
         // console.log(req.session.user_id)
         res.redirect('/sponsors')
     }
     else {
+        req.flash('error', 'Invalid Credentials')
         res.redirect('/sponsors/register')
     }
 })
