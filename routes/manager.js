@@ -89,4 +89,9 @@ router.post('/newEvent',async function(req,res){
     console.log(eventadded);
     res.redirect('/manager');
 })
+router.get('/profile',async function(req,res){
+    const user = await Manager.findById(req.session.user_id);
+    console.log(user);
+    res.render('mprofile',{user})
+})
 module.exports = router;

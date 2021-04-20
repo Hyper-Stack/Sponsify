@@ -77,7 +77,17 @@ router.post('/:id/addToCart', requireSlogin, async function(req, res){
     // console.log(eventadded);
     res.redirect('/sponsors/cart')
 })
-
+router.delete('/:id/delete', requireSlogin, async function(req, res){
+    const {id} = req.params;
+    const deleteEvent = await Events.findOne({id});
+    await (await Sponsor.findByIdAndUpdate(req.session.user_id, {$pull:{cart:deleteEvent}}))
+    res.redirect('/sponsors/cart')
+})
+router.get('/profile',async function(req,res){
+    const user = await Sponsor.findById(req.session.user_id);
+    console.log(user);
+    res.render('sprofile',{user})
+})
 
 
 module.exports = router;

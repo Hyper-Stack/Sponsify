@@ -10,7 +10,7 @@
     integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
     integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/app2.css">
+  <link rel="stylesheet" href="/css/app2.css">
 
 </head>
 
@@ -29,8 +29,8 @@
         <ul class="nav no-search" style="left: 0px; margin-right: 25px;">
           <!-- <li class="nav-item"><a href="#">Home</a></li> -->
           <li class="nav-item"><a href="#">About</a></li>
-          <li class="nav-item"><a href="sponsors/">Explore</a></li>
-          <li class="nav-item"><a href="#">Profile</a></li>
+          <li class="nav-item"><a href="/sponsors">Explore</a></li>
+          <li class="nav-item"><a href="/sponsors/profile">Profile</a></li>
           <li class="nav-item"><a href="/sponsors/logout">Logout</a></li>
         </ul>
       </nav>
@@ -44,7 +44,9 @@
             <article class="material-card Red">
               <h2>
                 <i class="fa fa-fw fa-star"></i>
-                <span style="display: inline ;"><%= event.EventName %> </span>
+                <span style="display: inline ;">
+                  <%= event.EventName %>
+                </span>
                 <strong>
                   <%= event.Venue %>
                 </strong>
@@ -60,11 +62,9 @@
               <a class="mc-btn-action">
                 <i class="fa fa-bars"></i>
               </a>
-              <div class="mc-footer">
+              <div class="mc-footer" style="display: flex; align-items: center; justify-content: center;">
                 <div>
-                  <a target="_blank"
-                    href="<%= event.Website %> "><img
-                      class="manager-icon"
+                  <a target="_blank" href="<%= event.Website %> "><img class="manager-icon"
                       src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuY29tL3N2Z2pzIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDUxMi40MTggNTEyLjQxOCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyIDUxMiIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PGc+PHBhdGggeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBkPSJtNDM3LjMzNSA3NS4wODJjLTEwMC4xLTEwMC4xMDItMjYyLjEzNi0xMDAuMTE4LTM2Mi4yNTIgMC0xMDAuMTAzIDEwMC4xMDItMTAwLjExOCAyNjIuMTM2IDAgMzYyLjI1MyAxMDAuMSAxMDAuMTAyIDI2Mi4xMzYgMTAwLjExNyAzNjIuMjUyIDAgMTAwLjEwMy0xMDAuMTAyIDEwMC4xMTctMjYyLjEzNiAwLTM2Mi4yNTN6bS0xMC43MDYgMzI1LjczOWMtMTEuOTY4LTEwLjcwMi0yNC43Ny0yMC4xNzMtMzguMjY0LTI4LjMzNSA4LjkxOS0zMC44MDkgMTQuMjAzLTY0LjcxMiAxNS40NTItOTkuOTU0aDc1LjMwOWMtMy40MDUgNDcuNTAzLTIxLjY1NyA5Mi4wNjQtNTIuNDk3IDEyOC4yODl6bS0zOTMuMzM4LTEyOC4yODloNzUuMzA5YzEuMjQ5IDM1LjI0MiA2LjUzMyA2OS4xNDUgMTUuNDUyIDk5Ljk1NC0xMy40OTQgOC4xNjItMjYuMjk2IDE3LjYzMy0zOC4yNjQgMjguMzM1LTMwLjg0LTM2LjIyNS00OS4wOTEtODAuNzg2LTUyLjQ5Ny0xMjguMjg5em01Mi40OTgtMTYwLjkzNmMxMS45NjggMTAuNzAyIDI0Ljc3IDIwLjE3MyAzOC4yNjQgMjguMzM1LTguOTE5IDMwLjgwOS0xNC4yMDMgNjQuNzEyLTE1LjQ1MiA5OS45NTRoLTc1LjMxYzMuNDA2LTQ3LjUwMiAyMS42NTctOTIuMDYzIDUyLjQ5OC0xMjguMjg5em0xNTQuMDk3IDMxLjcwOWMtMjYuNjIyLTEuOTA0LTUyLjI5MS04LjQ2MS03Ni4wODgtMTkuMjc4IDEzLjg0LTM1LjYzOSAzOS4zNTQtNzguMzg0IDc2LjA4OC04OC45Nzd6bTAgMzIuNzA4djYzLjg3M2gtOTguNjI1YzEuMTMtMjkuODEyIDUuMzU0LTU4LjQzOSAxMi4zNzktODQuNjMyIDI3LjA0MyAxMS44MjIgNTYuMTI3IDE4Ljg4MiA4Ni4yNDYgMjAuNzU5em0wIDk2LjUxOXY2My44NzNjLTMwLjExOSAxLjg3Ny01OS4yMDMgOC45MzctODYuMjQ2IDIwLjc1OS03LjAyNS0yNi4xOTMtMTEuMjQ5LTU0LjgyLTEyLjM3OS04NC42MzJ6bTAgOTYuNTgxdjEwOC4yNTRjLTM2LjczMi0xMC41OTMtNjIuMjQ2LTUzLjMzMy03Ni4wODgtODguOTc2IDIzLjc5Ny0xMC44MTcgNDkuNDY2LTE3LjM3NCA3Ni4wODgtMTkuMjc4em0zMi42NDYgMGMyNi42MjIgMS45MDQgNTIuMjkxIDguNDYxIDc2LjA4OCAxOS4yNzgtMTMuODQxIDM1LjY0LTM5LjM1NCA3OC4zODMtNzYuMDg4IDg4Ljk3NnptMC0zMi43MDh2LTYzLjg3M2g5OC42MjVjLTEuMTMgMjkuODEyLTUuMzU0IDU4LjQzOS0xMi4zNzkgODQuNjMyLTI3LjA0My0xMS44MjItNTYuMTI3LTE4Ljg4Mi04Ni4yNDYtMjAuNzU5em0wLTk2LjUxOXYtNjMuODczYzMwLjExOS0xLjg3NyA1OS4yMDMtOC45MzcgODYuMjQ2LTIwLjc1OSA3LjAyNSAyNi4xOTMgMTEuMjQ5IDU0LjgyIDEyLjM3OSA4NC42MzJ6bTAtOTYuNTgxdi0xMDguMjU0YzM2LjczNCAxMC41OTMgNjIuMjQ4IDUzLjMzOCA3Ni4wODggODguOTc3LTIzLjc5NyAxMC44MTYtNDkuNDY2IDE3LjM3My03Ni4wODggMTkuMjc3em03My4zMi05MS45NTdjMjAuODk1IDkuMTUgNDAuMzg5IDIxLjU1NyA1Ny44NjQgMzYuOTUxLTguMzE4IDcuMzM0LTE3LjA5NSAxMy45ODQtMjYuMjYgMTkuOTMxLTguMTM5LTIwLjE1Mi0xOC41MzYtMzkuNzM2LTMxLjYwNC01Ni44ODJ6bS0yMTAuODkxIDU2Ljg4MmMtOS4xNjUtNS45NDctMTcuOTQxLTEyLjU5Ny0yNi4yNi0xOS45MzEgMTcuNDc1LTE1LjM5NCAzNi45NjktMjcuODAxIDU3Ljg2NC0zNi45NTEtMTMuMDY4IDE3LjE0OC0yMy40NjUgMzYuNzMyLTMxLjYwNCA1Ni44ODJ6bS4wMDEgMjk1Ljk1OGM4LjEzOCAyMC4xNTEgMTguNTM3IDM5LjczNiAzMS42MDQgNTYuODgyLTIwLjg5NS05LjE1LTQwLjM4OS0yMS41NTctNTcuODY0LTM2Ljk1MSA4LjMxOC03LjMzNCAxNy4wOTUtMTMuOTg0IDI2LjI2LTE5LjkzMXptMjQyLjQ5NCAwYzkuMTY1IDUuOTQ3IDE3Ljk0MiAxMi41OTcgMjYuMjYgMTkuOTMtMTcuNDc1IDE1LjM5NC0zNi45NjkgMjcuODAxLTU3Ljg2NCAzNi45NTEgMTMuMDY3LTE3LjE0NCAyMy40NjUtMzYuNzI5IDMxLjYwNC01Ni44ODF6bTI2LjM2Mi0xNjQuMzAyYy0xLjI0OS0zNS4yNDItNi41MzMtNjkuMTQ2LTE1LjQ1Mi05OS45NTQgMTMuNDk0LTguMTYyIDI2LjI5NS0xNy42MzMgMzguMjY0LTI4LjMzNSAzMC44NCAzNi4yMjUgNDkuMDkxIDgwLjc4NiA1Mi40OTcgMTI4LjI4OXoiIGZpbGw9IiNmZmZmZmYiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIHN0eWxlPSIiPjwvcGF0aD48L2c+PC9zdmc+" />
                   </a>
                   <a target="_blank" href="<%= event.Facebook %> "><img class="manager-icon"
@@ -73,13 +73,11 @@
                   <a href="/sponsors/contact"><img class="manager-icon"
                       src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuY29tL3N2Z2pzIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTIiIHhtbDpzcGFjZT0icHJlc2VydmUiIGNsYXNzPSIiPjxnPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgoJPGc+CgkJPHBhdGggZD0iTTQ4NS43NDMsODUuMzMzSDI2LjI1N0MxMS44MTUsODUuMzMzLDAsOTcuMTQ4LDAsMTExLjU4OVY0MDAuNDFjMCwxNC40NCwxMS44MTUsMjYuMjU3LDI2LjI1NywyNi4yNTdoNDU5LjQ4NyAgICBjMTQuNDQsMCwyNi4yNTctMTEuODE1LDI2LjI1Ny0yNi4yNTdWMTExLjU4OUM1MTIsOTcuMTQ4LDUwMC4xODUsODUuMzMzLDQ4NS43NDMsODUuMzMzeiBNNDc1Ljg5LDEwNS4wMjRMMjcxLjEwNCwyNTguNjI2ICAgIGMtMy42ODIsMi44MDItOS4zMzQsNC41NTUtMTUuMTA1LDQuNTI5Yy01Ljc3LDAuMDI2LTExLjQyMS0xLjcyNy0xNS4xMDQtNC41MjlMMzYuMTA5LDEwNS4wMjRINDc1Ljg5eiBNMzY2LjUsMjY4Ljc2MSAgICBsMTExLjU5LDEzNy44NDdjMC4xMTIsMC4xMzgsMC4yNDksMC4yNDMsMC4zNjgsMC4zNjhIMzMuNTQyYzAuMTE4LTAuMTMxLDAuMjU2LTAuMjMsMC4zNjgtMC4zNjhMMTQ1LjUsMjY4Ljc2MSAgICBjMy40MTktNC4yMjcsMi43NzEtMTAuNDI0LTEuNDY0LTEzLjg1MWMtNC4yMjctMy40MTktMTAuNDI0LTIuNzcxLTEzLjg0NCwxLjQ1N2wtMTEwLjUsMTM2LjUwMVYxMTcuMzMybDIwOS4zOTQsMTU3LjA0NiAgICBjNy44NzEsNS44NjIsMTcuNDQ3LDguNDQyLDI2LjkxMiw4LjQ2OGM5LjQ1Mi0wLjAyLDE5LjAzNi0yLjYsMjYuOTEyLTguNDY4bDIwOS4zOTQtMTU3LjA0NnYyNzUuNTM0TDM4MS44MDcsMjU2LjM2NyAgICBjLTMuNDItNC4yMjctOS42MjMtNC44NzctMTMuODQ0LTEuNDU3QzM2My43MjksMjU4LjMyOSwzNjMuMDc5LDI2NC41MzQsMzY2LjUsMjY4Ljc2MXoiIGZpbGw9IiNmZmZmZmYiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIHN0eWxlPSIiIGNsYXNzPSIiPjwvcGF0aD4KCTwvZz4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8L2c+PC9zdmc+" />
                   </a>
-                  <a href="/sponsors/contact"><img class="manager-icon"
-                      src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuY29tL3N2Z2pzIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDUxMy42NCA1MTMuNjQiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTIiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxnPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgoJPGc+CgkJPHBhdGggZD0iTTQ5OS42NiwzNzYuOTZsLTcxLjY4LTcxLjY4Yy0yNS42LTI1LjYtNjkuMTItMTUuMzU5LTc5LjM2LDE3LjkyYy03LjY4LDIzLjA0MS0zMy4yOCwzNS44NDEtNTYuMzIsMzAuNzIgICAgYy01MS4yLTEyLjgtMTIwLjMyLTc5LjM2LTEzMy4xMi0xMzMuMTJjLTcuNjgtMjMuMDQxLDcuNjgtNDguNjQxLDMwLjcyLTU2LjMyYzMzLjI4LTEwLjI0LDQzLjUyLTUzLjc2LDE3LjkyLTc5LjM2bC03MS42OC03MS42OCAgICBjLTIwLjQ4LTE3LjkyLTUxLjItMTcuOTItNjkuMTIsMGwtNDguNjQsNDguNjRjLTQ4LjY0LDUxLjIsNS4xMiwxODYuODgsMTI1LjQ0LDMwNy4yYzEyMC4zMiwxMjAuMzIsMjU2LDE3Ni42NDEsMzA3LjIsMTI1LjQ0ICAgIGw0OC42NC00OC42NEM1MTcuNTgxLDQyNS42LDUxNy41ODEsMzk0Ljg4LDQ5OS42NiwzNzYuOTZ6IiBmaWxsPSIjZmZmZmZmIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBzdHlsZT0iIj48L3BhdGg+Cgk8L2c+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPC9nPjwvc3ZnPg==" />
-                  </a>
-                  <!-- <form action="/sponsors/<%= event._id %>/addToCart" method="POST" >
-                    <button type="submit"><a><img class="manager-icon"
-                    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuY29tL3N2Z2pzIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDUxMy42NCA1MTMuNjQiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTIiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxnPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgoJPGc+CgkJPHBhdGggZD0iTTQ5OS42NiwzNzYuOTZsLTcxLjY4LTcxLjY4Yy0yNS42LTI1LjYtNjkuMTItMTUuMzU5LTc5LjM2LDE3LjkyYy03LjY4LDIzLjA0MS0zMy4yOCwzNS44NDEtNTYuMzIsMzAuNzIgICAgYy01MS4yLTEyLjgtMTIwLjMyLTc5LjM2LTEzMy4xMi0xMzMuMTJjLTcuNjgtMjMuMDQxLDcuNjgtNDguNjQxLDMwLjcyLTU2LjMyYzMzLjI4LTEwLjI0LDQzLjUyLTUzLjc2LDE3LjkyLTc5LjM2bC03MS42OC03MS42OCAgICBjLTIwLjQ4LTE3LjkyLTUxLjItMTcuOTItNjkuMTIsMGwtNDguNjQsNDguNjRjLTQ4LjY0LDUxLjIsNS4xMiwxODYuODgsMTI1LjQ0LDMwNy4yYzEyMC4zMiwxMjAuMzIsMjU2LDE3Ni42NDEsMzA3LjIsMTI1LjQ0ICAgIGw0OC42NC00OC42NEM1MTcuNTgxLDQyNS42LDUxNy41ODEsMzk0Ljg4LDQ5OS42NiwzNzYuOTZ6IiBmaWxsPSIjZmZmZmZmIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBzdHlsZT0iIj48L3BhdGg+Cgk8L2c+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPC9nPjwvc3ZnPg==" />
-                  </button></a></form> -->
+                  <form style="display: inline;" action="/sponsors/<%= event._id %>/delete?_method=delete"
+                    method="POST">
+                    <button type="submit" class="btn btn-success"
+                      style="margin-left:5px; font-size: 1.8em; padding-top: 5px; padding-bottom: 5px; padding-right: 7px;padding-left:7px; color: white;">🗑️</button>
+                  </form>
                 </div>
               </div>
             </article>
@@ -143,7 +141,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
       integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
       crossorigin="anonymous"></script>
-    <script src="js/navbar.js"></script>
+    <script src="/js/navbar.js"></script>
 
 </body>
 

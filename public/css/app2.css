@@ -1399,7 +1399,7 @@ input {
   border-color: #FFF3E0;
 }
 .material-card.Deep-Orange h2 {
-  background-color: #FF5722;
+  background-color: #ff5722;
 }
 .material-card.Deep-Orange h2:after {
   border-top-color: #FF5722;
@@ -1628,9 +1628,16 @@ h3 {
 .mc-footer{
   display: flex !important;
   align-items: center !important;
-  justify-content: center !important;
+  /* justify-content: center !important; */
   padding:0 !important;
 }
 .fa-arrow-left{
   color: white !important;;
+}
+.btn-success{
+  border-radius: 50% !important;
+  padding : 1px 14.5px;
+  background-color: #B71C1C !important;
+  border: 0;
+  font-size: 2em;
 }
