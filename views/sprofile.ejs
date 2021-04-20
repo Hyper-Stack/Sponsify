@@ -23,19 +23,19 @@
             </p>
         </div>
         <div class="contact" style="margin-top: 0;">
-            <form id="form">
+            <form id="form" method="POST" action="/sponsors/profile">
                 <legend class="header">Get In Touch</legend>
                 <fieldset>
                     <label class="fa fa-user" for="name-input" aria-hidden="true"></label>
-                    <input type="text" placeholder="Your name..." id="name-input" />
+                    <input type="text" placeholder="Your name..." id="name-input" name="Name" value="<%= user.username %>"/>
                 </fieldset>
                 <fieldset>
                     <label class="fa fa-envelope" for="email-input" aria-hidden="true"></label>
-                    <input type="email" placeholder="Your email..." id="email-input" />
+                    <input type="email" placeholder="Your email..." id="email-input" name="Email" value="<%= user.email %>"/>
                 </fieldset>
                 <fieldset>
-                    <label class="fa fa-comment" for="message-input" aria-hidden="true"></label>
-                    <textarea placeholder="Your Message..." id="message-input"></textarea>
+                    <label class="fa fa-comment" for="message-input" aria-hidden="true" ></label>
+                    <textarea placeholder="Your Message..." id="message-input" name="message"></textarea>
                 </fieldset>
                 <fieldset>
                     <button type="submit" id="btn-submit">Send</button>

@@ -10,7 +10,7 @@ var cookieParser = require('cookie-parser');
 const Events = require('../models/events');
 const events = require('../models/events');
 const { findById } = require('../models/events');
-
+const sendMail = require('../controller/mail.js');
 
 router.get('/register', function (req, res) {
     req.flash('success', 'Login or SignUp to continue')
@@ -53,9 +53,14 @@ router.get('/',requireSlogin,async function(req,res){
 router.get('/sponsorship',requireSlogin, function(req,res){
     res.render('sponsorDetails')
 })
-router.get('/contact',requireSlogin,function(req,res){
-    res.render('scontact')
+router.post('/:id/contact',requireSlogin,async function(req,res){
+
+    const {id} = req.params;
+    const events = await Events.find({ _id : id});
+    const {Email,Contact} = events[0];
+    res.render('scontact',{Email,Contact})
 })
+
 router.post('MAILTO:sponsify07@gmail.com',requireSlogin,function(req,res){
     req.flash('success', 'Mail sent successfully')
     res.redirect('/sponsors')
@@ -91,6 +96,16 @@ router.get('/profile',async function(req,res){
     console.log(user);
     res.render('sprofile',{user})
 })
+
+router.post('/profile',function(req,res) {
+    const {Name,Email,message} = req.body;
+    console.log('Data :',req.body);
+    //sendMail(email,Name,message); //to be added
+    res.redirect('/sponsors/profile');
+    
+})
+
+
 router.get('/about', function(req,res){
     res.render('sabout')
 })

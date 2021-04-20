@@ -9,7 +9,8 @@ const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken');
 const passport = require('passport')
 var cookieParser = require('cookie-parser');
-const Event = require('../models/events')
+const Event = require('../models/events');
+const sendMail = require('../controller/mail.js');
 // var userId = 
 router.get('/register', function (req, res) {
     req.flash('success', 'Login or SignUp to continue')
@@ -95,6 +96,15 @@ router.post('/:id/delete', async function (req, res) {
     res.redirect('/manager')
 
 })
+
+router.post('/profile',function(req,res) {
+    const {Name,Email,message} = req.body;
+    console.log('Data :',req.body);
+    //sendMail(email,Name,message); //to be added
+    res.redirect('/manager/profile');
+    
+})
+
 router.get('/about', function (req, res) {
     res.render('mabout')
 })

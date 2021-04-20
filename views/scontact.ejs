@@ -24,15 +24,16 @@
             <div class="face back">
                 <div id="open"></div>
                 <div id="folds"></div>
+                <!--Adding contact info-->
                 <div class="button con">contact form</div>
                 <div id="letter">
-                    <hgroup>
-                        <h1 id="info">P: 6232151111</h1>
+                    <hgroup>              <!--card phone number-->  
+                        <h1 id="info">P: <%=Contact%></h1>
                         <h2>---- or ----</h2>
                     </hgroup>
                     <p>
-
-                    <form action="MAILTO:sponsify07@gmail.com" method="post" novalidate="novalidate" id="myform">
+                                        <!--card email-->
+                    <form action="MAILTO:<%=Email%>" method="post" novalidate="novalidate" id="myform">
 
                         <span class="Name">
                             <input type="text" name="username" value="" size="40" class="nameinput" aria-required="true"
