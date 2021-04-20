@@ -46,11 +46,17 @@
                 <!--Front of the card-->
                 <section class="item-card">
                   <div class="item-summary">
-                    <h2 class="title"><%= event.EventName %> </h2>
-                    <p class="venue">  </p>
+                    <h2 class="title">
+                      <%= event.EventName %>
+                    </h2>
+                    <p class="venue"> </p>
                     <address class="address">
-                      <p class="street-address"><%= event.Email %> </p>
-                      <p class="locality"><%= event.Contact %> </p>
+                      <p class="street-address">
+                        <%= event.Email %>
+                      </p>
+                      <p class="locality">
+                        <%= event.Contact %>
+                      </p>
                     </address>
                   </div>
                   <div class="image-wrapper">
@@ -58,38 +64,49 @@
                       alt="The Paper Kites performing, overlooking a crowd" />
                   </div>
                   <div class="item-time-date">
-                    <time class="date" datetime="2018-10-16"><%= event.Venue %></time>
+                    <time class="date" datetime="2018-10-16">
+                      <%= event.Venue %>
+                    </time>
                     <!-- <time class="time" datetime="19:00">7:00 PM</time> -->
                   </div>
                   <div class="item-buttons front-buttons">
                     <button class="btn-details grey" aria-label="Learn more about the band and venue"> Details</button>
-                    <a class="btn-tickets blue" aria-label="Purchase tickets for this event" href="#">Tickets</a>
+                    <form action='/manager/Edit' method="post">
+                      <button class="btn-tickets blue on-back" type="submit">EDIT</button>
+                    </form>
                   </div>
                 </section>
                 <!--Back of the card-->
                 <section class="item-card-details">
                   <div class="bio-block">
-                    <h2 class="bio-band"><%= event.EventName %> </h2>
+                    <h2 class="bio-band">
+                      <%= event.EventName %>
+                    </h2>
                     <h3 class="bio-title">Bio</h3>
                   </div>
                   <div class="scroll-block">
                     <p class="bio-text">
-                      <%= event.EventDescription%> 
+                      <%= event.EventDescription%>
                     </p>
                   </div>
                   <div class="more-info">
                     <p>
-                      <a class="info" aria-label="website" href="<%= event.Website %> "><%= event.EventName %>Website </a>
+                      <a class="info" aria-label="website" href="<%= event.Website %> ">
+                        <%= event.EventName %>Website
+                      </a>
                     </p>
                     <p>
-                      <a class="info" aria-label="fb" href="#"><%= event.Facebook %>Facebook</a>
+                      <a class="info" aria-label="fb" href="#">
+                        <%= event.Facebook %>Facebook
+                      </a>
                     </p>
                   </div>
                   <div class="item-buttons back">
                     <button class="btn-details grey back-arrow" aria-label="Learn more about the band and venue"
                       href="#"></button>
-                    <a class="btn-tickets blue on-back" aria-label="Purchase tickets for this event"
-                      href="#">Delete</a>
+                      <form style="width: 100%; " action='/manager/<%=event._id%>/delete' method="post">
+                        <button style="width: 100%;" class="btn-tickets red on-back" type="submit">DELETE</button>
+                      </form>
                   </div>
                 </section>
               </div>
@@ -99,92 +116,16 @@
         <% } %>
     </main>
     <!--Add Cards which can be modified by the manager -->
-    <% for(let event of activeEvents){ %>
-      <div class="wrapper">
-        <div class="container">
 
-          <article class="gallery-card">
-            <form action="/manager/Delete" method="POST">
-              <input value="<%= event._id%>" style="visibility:hidden;" name="Delete">
-              <button class="close" type="submit"><i class="fa fa-times"></i></button>
-            </form>
-
-
-            <section class="gallery-image">
-            </section>
-            <section class="gallery-info">
-
-              <h2 class="gallery-title">
-                <%= event.EventName %>
-              </h2>
-
-              <!-- <div class="gallery-author">
-                <img src="https://s.cdpn.io/profiles/user/1454190/80.jpg?1548321854" alt="">
-                <a href="#">Manager</a>
-              </div> -->
-              <p class="gallery-descr">
-                Description: <%= event.EventDescription %>
-              </p>
-              <p>email : </p>
-              <p>location : <%= event.Venue %>
-              </p>
-              <p>contact : </p>
-              <p>target audience : </p>
-              <p>footfall : </p>
-              <p>website : <%= event.Website %>
-              </p>
-              <p>fb : <%= event.Facebook %>
-              </p>
-              <p>image : <%= event.Image %>
-              </p>
-              <hr>
-
-              <div class="gallery-comments">
-                <h1>List of Interested Sponsors</h1>
-                <!-- <div class="comment">
-                  <a>John Doe: </a><span>Looks tasty!</span>
-                </div>
-                <div class="comment">
-                  <a>Jiří Šrytr: </a><span>Pěkněj frontend</span>
-                </div>
-                <div class="comment">
-                  <a>Martin Pekáč: </a><span>Dal bich sy 👍</span>
-                </div>
-                <div class="comment">
-                  <a>Pepik J.: </a><span>Pěkně no...</span>
-                </div>
-                <div class="comment">
-                  <a>Martin Teplý: </a><span>Dobrá restaurace! 😂</span>
-                </div>
-                <div class="comment">
-                  <a>cepinda.: </a><span>Jinambuv dortík je nej 👌</span>
-                </div>
-                <div class="comment">
-                  <a>Jan P.: </a><span>kolik to stojí</span>
-                </div> -->
-              </div>
-              <form action="/manager/Edit" method="POST">
-                <input value="<%= event._id%>" style="visibility:hidden;" name="Edit">
-                <button type="submit"> edit</button>
-              </form>
-
-            </section>
-          </article>
-
-        </div>
-      </div>
-      <% } %>
-
-
-        <!-- partial -->
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-          integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-          crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-          integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-          crossorigin="anonymous"></script>
-        <script src="js/navbar.js"></script>
+    <!-- partial -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"></script>
+    <script src="js/navbar.js"></script>
 
 </body>
 

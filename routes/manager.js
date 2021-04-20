@@ -1,7 +1,5 @@
 const express = require('express')
-
 const app = express()
-
 const methodOverride = require('method-override');
 app.use(methodOverride('_method'))
 const router = express.Router();
@@ -49,14 +47,6 @@ router.get('/',requireMlogin,async function(req,res){
     //console.log(activeEvents);
     res.render('manager',{activeEvents});
 })
-
-router.post('/Delete',async function(req,res) {
-  const DeleteEvent =  req.body.Delete;
-    await Event.deleteOne({_id : DeleteEvent});
-    //console.log(DeleteEvent);
-    res.redirect('/manager');
-})
-
 router.post('/Edit',async function(req,res) {
     const EditEvent = req.body.Edit;
     const toeditEvent =  await Event.find({_id : EditEvent});
@@ -93,5 +83,11 @@ router.get('/profile',async function(req,res){
     const user = await Manager.findById(req.session.user_id);
     console.log(user);
     res.render('mprofile',{user})
+})
+router.post('/:id/delete', async function(req,res){
+    const {id} = await req.params;
+    await (await Manager.findByIdAndUpdate(req.session.user_id, {$pull:{activeEvents:id}}))
+    res.redirect('/manager')
+    
 })
 module.exports = router;

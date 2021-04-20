@@ -80,7 +80,7 @@ router.post('/:id/addToCart', requireSlogin, async function(req, res){
 router.delete('/:id/delete', requireSlogin, async function(req, res){
     const {id} = req.params;
     const deleteEvent = await Events.findOne({id});
-    await (await Sponsor.findByIdAndUpdate(req.session.user_id, {$pull:{cart:deleteEvent}}))
+    await (await Sponsor.findByIdAndUpdate(req.session.user_id, {$pull:{cart:id}}))
     res.redirect('/sponsors/cart')
 })
 router.get('/profile',async function(req,res){

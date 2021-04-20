@@ -2104,7 +2104,16 @@ s*/
 	background-position: 0% 50%;
 	border-radius: 0 0 0.45em 0;
 }
-
+.red{
+	background-color: #dd5151;
+	background: linear-gradient(90deg, #ff7272, #dd5151, #ff3737, #dd5151, #ff7272) ;
+  background-size: 400% 400%;
+	background-position: 0% 50%;
+	border-radius: 0 0 0.45em 0;
+}
+.red:hover{
+	animation: gradientMove 6s ease infinite !important;
+}
 .blue:hover {
 	animation: gradientMove 6s ease infinite;
 }
@@ -2143,7 +2152,7 @@ s*/
 	height: 0.2em;
 	width: 100%;
 	background-color: #4972c1;
-	background: linear-gradient(90deg, #72a1ff, #4972c1, #34579e, #4972c1, #72a1ff);
+	background: linear-gradient(90deg, #ff7272, #b33a3a, #e73d3d, #ff1e1e, #165ae0);
 	background-size: 400% 400%;
 	background-position: 0% 50%;
 	transition: all 0.2s ease-in 0s;
