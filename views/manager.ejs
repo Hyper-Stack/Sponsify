@@ -47,6 +47,7 @@
       <i id="err-icon" class="fa fa-exclamation-circle"></i>
       <h1 style="margin-top: 0.8em; font-size: 3em; font-weight: 800;">Events Not Found!</h1>
       <p class="e404">Add Some Events being managed by you</p>
+      <a href="/manager/event" class="btn btn-outline-primary">Add Event</a>
     </div>
     <%}%>
       <main class="grid-container">
@@ -85,9 +86,10 @@
                       <button class="btn-details grey" aria-label="Learn more about the band and venue">
                         Details</button>
                       <form action='/manager/Edit' method="post" style="height: 0;">
+                        
+                        <button class="btn-tickets blue on-back" type="submit">EDIT</button>
                         <input value="<%= event._id%>" style="visibility:hidden;height: 0; width:0; padding:0;"
                           name="Edit">
-                        <button class="btn-tickets blue on-back" type="submit">EDIT</button>
                       </form>
                     </div>
                   </section>

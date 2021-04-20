@@ -100,7 +100,7 @@ router.post('/:id/delete', async function (req, res) {
 router.post('/profile',function(req,res) {
     const {Name,Email,message} = req.body;
     console.log('Data :',req.body);
-    //sendMail(email,Name,message); //to be added
+    sendMail(Email,Name,message); //to be added
     res.redirect('/manager/profile');
     
 })
