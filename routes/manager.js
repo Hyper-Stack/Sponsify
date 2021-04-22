@@ -5,7 +5,7 @@ app.use(methodOverride('_method'))
 const router = express.Router();
 const Manager = require('../models/manager')
 const { isMLoggedIn, isSLoggedIn, requireSlogin, requireMlogin } = require('../middleware')
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken');
 const passport = require('passport')
 var cookieParser = require('cookie-parser');

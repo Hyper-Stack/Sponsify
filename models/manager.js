@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const event = require('./events');
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcryptjs')
 const managerSchema = new mongoose.Schema({
     username: {
         type: String,

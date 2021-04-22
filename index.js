@@ -17,7 +17,7 @@ const { isMLoggedIn, isSLoggedIn, requireSlogin, requireMlogin } = require('./mi
 const managerRoutes = require('./routes/manager')
 const sponsorRoutes = require('./routes/sponsors')
 const mailRoute = require('./routes/mailRoute');
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcryptjs')
 
 //const MongoStore = require('connect-mongo')(session);
 const dbUrl = process.env.dbURL
