@@ -11,6 +11,7 @@ const passport = require('passport')
 var cookieParser = require('cookie-parser');
 const Event = require('../models/events');
 const sendMail = require('../controller/mail.js');
+const {cloudinary} = require('../cloudinary/index')
 
 module.exports.getRegister = function (req, res) {
     req.flash('success', 'Login or SignUp to continue')
@@ -74,7 +75,10 @@ module.exports.editEvent = async function (req, res) {
 }
 module.exports.new = async function (req, res) {
     const newEvent = new Event(req.body);
+    newEvent.Image.url = req.file.path
     await newEvent.save()
+    // console.log(req.body, req.file)
+    console.log(newEvent);
     await Manager.findByIdAndUpdate(req.session.user_id, { $push: { activeEvents: newEvent } })
     const eventadded = await Event.findById(req.session.user_id).populate('activeEvents');
     console.log(eventadded);

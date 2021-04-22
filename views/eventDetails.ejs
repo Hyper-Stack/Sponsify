@@ -7,79 +7,91 @@
     <link href='https://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel="stylesheet" href="/css/app3.css">
-
+    <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.js"></script>
 </head>
 
 <body>
     <!-- partial:index.partial.html -->
-    <form autocomplete="off" action= "/manager/newEvent" method="POST">
-        <input id="input-1" type="text" name = "EventName" placeholder="e.g., Sunburn Goa" required autofocus />
+    <form autocomplete="off" action="/manager/newEvent" method="POST" enctype="multipart/form-data">
+        <input id="input-1" type="text" name="EventName" placeholder="e.g., Sunburn Goa" required autofocus />
         <label for="input-1">
             <span class="label-text">Event Name</span>
             <span class="nav-dot"></span>
             <div class="signup-button-trigger">Sign Up</div>
         </label>
-        
-        <input id="input-2" type="text" name = "Venue" placeholder="Vegator Beach, Goa" required />
+
+        <input id="input-2" type="text" name="Venue" placeholder="Vegator Beach, Goa" required />
         <label for="input-2">
             <span class="label-text">Venue</span>
             <span class="nav-dot"></span>
         </label>
 
-        <input id="input-3" type="text" name = "EventDescription" placeholder="Description" required />
+        <input id="input-3" type="text" name="EventDescription" placeholder="Description" required />
         <label for="input-3">
             <span class="label-text">Event Description</span>
             <span class="nav-dot"></span>
         </label>
 
-        <input id="input-4" type="text" name = "EventType" placeholder="Cutural, EDM, Charity....." required />
+        <input id="input-4" type="text" name="EventType" placeholder="Cutural, EDM, Charity....." required />
         <label for="input-4">
             <span class="label-text">Event Type</span>
             <span class="nav-dot"></span>
         </label>
 
-        <input id="input-5" type="text" name = "Website" placeholder="www.event.com" required />
+        <input id="input-5" type="text" name="Website" placeholder="www.event.com" required />
         <label for="input-5">
             <span class="label-text">Website</span>
             <span class="nav-dot"></span>
         </label>
-        <input id="input-6" type="text" name = "Image" placeholder="unsplash.com" required />
+        <!-- <input id="input-6" type="text" name="Image" placeholder="unsplash.com" required />
         <label for="input-6">
             <span class="label-text">Image Link</span>
             <span class="nav-dot"></span>
-        </label>
-        <input id="input-7" type="text" name = "Facebook" placeholder="www.facebook.com/-----" required />
+        </label> -->
+        <input id="input-7" type="text" name="Facebook" placeholder="www.facebook.com/-----" required />
         <label for="input-7">
             <span class="label-text">Facebook Link</span>
             <span class="nav-dot"></span>
         </label>
-        <input id="input-8" type="text" name = "TargetAudience" placeholder="Youth, Kids, Handicapped....." required />
+        <input id="input-8" type="text" name="TargetAudience" placeholder="Youth, Kids, Handicapped....." required />
         <label for="input-8">
             <span class="label-text">Target Audience</span>
             <span class="nav-dot"></span>
         </label>
 
-        <input id="input-9" name = "ExpectedFootfall" placeholder="e.g., 1,00,000" required />
+        <input id="input-9" name="ExpectedFootfall" placeholder="e.g., 1,00,000" required />
         <label for="input-9">
             <span class="label-text">Expected Footfall</span>
             <span class="nav-dot"></span>
         </label>
 
-        <input id="input-10" type="email" name = "Email" placeholder="goa@sunburn.com" required />
+        <input id="input-10" type="email" name="Email" placeholder="goa@sunburn.com" required />
         <label for="input-10">
             <span class="label-text">E-mail to connect</span>
             <span class="nav-dot"></span>
         </label>
 
-        <input id="input-11" name = "Contact" placeholder="+91" required />
+        <input id="input-11" name="Contact" placeholder="+91" required />
         <label for="input-11">
             <span class="label-text">Contact no.</span>
             <span class="nav-dot"></span>
         </label>
-        
+        <div class="mb-3">
+            <div class="form-file custom-file">
+                <input type="file" class="form-file-input" id="image" name="Image">
+                <label class="form-file-label" for="image">
+                    <span class="form-file-text custom-file-label"></span>
+                    <span class="form-file-button"></span>
+                </label>
+            </div>
+        </div>
         <button type="submit">Submit Event Details</button>
         <p class="tip">Press Tab</p>
         <!-- partial -->
+        <script>
+            bsCustomFileInput.init()
+        </script>
         <script src="./script.js"></script>
 </body>
+
 </html>

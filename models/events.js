@@ -25,8 +25,8 @@ const eventSchema = new mongoose.Schema({
         // required : true,
     },
     Image : {
-        type : String,
-        required : true,
+        url : String,
+        filename: String,    // required : true,
     },
     TargetAudience : {
         type : String,

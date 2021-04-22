@@ -1,4 +1,6 @@
-require('dotenv').config;
+// if(process.env.NODE_ENV !== "production"){
+require('dotenv').config();
+
 const express = require('express');
 const path = require('path');
 const methodOverride = require('method-override');
@@ -11,7 +13,7 @@ const localstrategy = require('passport-local')
 const app = express();
 const Manager = require('./models/manager')
 const Sponsor = require('./models/sponsor')
-const {isMLoggedIn, isSLoggedIn ,requireSlogin, requireMlogin} = require('./middleware')
+const { isMLoggedIn, isSLoggedIn, requireSlogin, requireMlogin } = require('./middleware')
 const managerRoutes = require('./routes/manager')
 const sponsorRoutes = require('./routes/sponsors')
 const mailRoute = require('./routes/mailRoute');
@@ -42,12 +44,12 @@ app.use(express.static(path.join(__dirname, 'public')))
 const sessionconfig = {
     //store,
     //name : 'session',
-    secret : 'mysecret',
+    secret: 'mysecret',
     resave: false,
     saveUninitialized: true,
     cookie: {
-        expires: Date.now() + 1000*60*60*24*7,
-        maxAge: 1000*60*60*24*7
+        expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
+        maxAge: 1000 * 60 * 60 * 24 * 7
 
     }
 }
@@ -63,15 +65,15 @@ app.use(cookieParser());
 // passport.use(new localstrategy(Sponsor.authenticate()));
 // passport.serializeUser(Sponsor.serializeUser());
 // passport.deserializeUser(Sponsor.deserializeUser());
-app.use(function(req,res,next){
+app.use(function (req, res, next) {
     res.locals.success = req.flash('success');
     res.locals.error = req.flash('error');
     res.locals.currentUser = req.user;
     next();
 })
-app.use('/manager',managerRoutes)
+app.use('/manager', managerRoutes)
 app.use('/sponsors', sponsorRoutes)
-app.use('/',mailRoute)
+app.use('/', mailRoute)
 
 
 mongoose.connect(dbUrl, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: false, })

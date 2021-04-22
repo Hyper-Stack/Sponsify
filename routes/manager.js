@@ -12,7 +12,9 @@ var cookieParser = require('cookie-parser');
 const Event = require('../models/events');
 const sendMail = require('../controller/mail.js');
 const managers = require('../controller/manager')
-
+const multer = require('multer')
+const { storage } = require('../cloudinary/index')
+const upload = multer({ storage })
 
 router.get('/register', managers.getRegister)
 router.post('/register', managers.registration)
@@ -22,9 +24,9 @@ router.post('/Edit', managers.edit)
 router.get('/event', requireMlogin, managers.getEvent)
 router.get('/logout', managers.logout)
 router.patch('/EditEvent', managers.editEvent)
-router.post('/newEvent', managers.new)
+router.post('/newEvent',upload.single('Image') ,managers.new)
 router.get('/profile', managers.profile)
 router.post('/:id/delete', managers.delete)
 router.post('/profile', managers.mail)
-router.get('/about',managers.about)
+router.get('/about', managers.about)
 module.exports = router;
