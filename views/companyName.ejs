@@ -4,11 +4,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/app5.css">
     <title>Company Names</title>
 </head>
 <body>
-    <% for(let companies of company){ %>
-    <h1><%=companies.CompanyName%></h1>
-    <% } %>
+    <section class="main-section">
+        <div class="course-header">
+          <i class="mode-switch fas fa-moon"></i>
+          <h1>Interested Companies</h1>
+        </div>
+        <div class="courses">
+            
+             <% for(let companies of company){ %>
+          <div class="course html" tabindex="1">
+            <div class="course-info">
+              <span><%=companies.YearOfEstablishment%></span>
+              <h5><%=companies.CompanyName%></h5>
+              <a href="<%=companies.Website%>" tabindex="2">Company's Website <i class="fas fa-chevron-right"></i></a>
+            </div>
+            <div class="course-more">
+              <div class="details">
+                <h5><%=companies.Contact%></h5>
+                
+              </div>
+              <h2 class="name"><%=companies.FullName%></h2>
+              <div class="details">
+                <h3>Previous Sponsored Events : <%=companies.PastSponsorships%></h3>
+                <h5>Wish to sponsor : <%=companies.EventsWish%></h5>
+              </div>
+              <a class="continue-btn html" tabindex="4" href="#">Email</a>
+            </div>
+          </div>
+          
+        </div>
+      </section>
+   
+      <div class="overlay">
+        <p class="overlay-message"></p>
+      </div>
+
+    <% } %> 
+    
 </body>
 </html>

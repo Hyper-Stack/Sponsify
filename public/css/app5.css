@@ -1,0 +1,245 @@
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+:root {
+  --html-color: #56cfe1;
+ 
+  --light: white;
+  --light-grey: rgba(255, 255, 255, 0.7);
+  --dark: #050505;
+  --header: #dbdbdb;
+  --bg: #f0f0f0;
+  --text: var(--dark);
+  --text-hover: var(--text);
+  --slide: cubic-bezier(0.59, 0.01, 0.48, 1);
+  --mode-hover: #203297;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Muli", sans-serif;
+  width: 100vw;
+  background: var(--bg);
+  overflow-x: hidden;
+  transition: background 150ms;
+}
+
+section {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: translateX(150%);
+  display: none;
+}
+
+.main-section {
+  transform: translateX(0px);
+  display: block;
+}
+
+.course-header {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--header);
+  color: var(--text);
+  width: 100vw;
+  transition: background 150ms, color 150ms;
+}
+
+
+.courses {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.course {
+  margin-top: 20px;
+  display: flex;
+  width: 70%;
+  max-width: 800px;
+  height: 200px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  position: relative;
+}
+
+.course-info {
+  width: 100%;
+  height: 100%;
+  color: var(--light);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 30px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  transition: width 550ms var(--slide);
+}
+
+.course.html .course-info {
+  background: var(--html-color);
+}
+
+
+.course:hover .course-info,
+.course:focus-within .course-info {
+  width: 35%;
+}
+
+.course-info span {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--light-grey);
+  margin-bottom: 12px;
+}
+
+.course-info h5 {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.course-info a {
+  color: var(--light-grey);
+  text-decoration: none;
+  transition: 150ms color;
+  position: absolute;
+  bottom: 25px;
+  left: 30px;
+}
+
+.course-more .chapters {
+  color: var(--dark);
+  text-decoration: none;
+  transition: 150ms color;
+  position: absolute;
+  bottom: 25px;
+  left: 30px;
+  display: none;
+}
+
+.course-info a:hover {
+  color: var(--light);
+}
+
+.course-info i {
+  font-size: 14px;
+}
+
+.course-more {
+  width: 65%;
+  height: 100%;
+  background: var(--light);
+  color: var(--dark);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 30px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  overflow: hidden;
+  z-index: 10;
+  transform: translateX(100%);
+  transition: transform 550ms var(--slide);
+}
+
+.course:hover .course-more,
+.course:focus-within .course-more {
+  transform: translateX(0);
+}
+
+
+
+
+.name {
+  font-size: 28px;
+  margin-top: 4px;
+}
+
+.description {
+  font-size: 20px;
+  margin-top: 15px;
+}
+
+.time {
+  opacity: 0.3;
+  font-weight: 600;
+}
+
+.continue-btn,
+.read-btn {
+  align-self: flex-end;
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+  font-size: 15px;
+  border-radius: 20px;
+  padding: 8px 16px;
+  color: var(--light);
+  text-decoration: none;
+  transition: opacity 150ms;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.course.html .continue-btn,
+.course.html .read-btn {
+  background: var(--html-color);
+}
+
+
+
+.continue-btn:hover,
+.read-btn:hover {
+  opacity: 0.8;
+} 
+
+
+@media screen and (max-width: 950px) {
+  .course {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .course-more {
+    width: 100%;
+  }
+  .course-more .chapters {
+    display: block;
+  }
+  .course-info a {
+    display: none;
+  }
+  .course:hover .course-info {
+    width: 100%;
+  }
+}
+
