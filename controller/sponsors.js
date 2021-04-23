@@ -4,6 +4,8 @@ const router = express.Router();
 const Sponsor = require('../models/sponsor')
 const {isMLoggedIn, isSLoggedIn ,requireSlogin, requireMlogin,deleteAllCookies} = require('../middleware')
 const bcrypt = require('bcryptjs')
+const Manager = require('../models/manager')
+const Company = require('../models/companies')
 const jwt = require('jsonwebtoken');
 const passport = require('passport')
 var cookieParser = require('cookie-parser');
@@ -53,6 +55,19 @@ module.exports.home = async function(req,res){
 module.exports.company =  function(req,res){
     res.render('sponsorDetails')
 }
+
+module.exports.companyAdd =  async function(req,res){
+    const details = req.body;
+    console.log(details);
+    const newCompany = new Company(details);
+    await newCompany.save()
+        .then(()=>console.log("it worked!"))
+        .catch((err)=>{console.log(err); console.log("not worked")})
+    
+    await Sponsor.findByIdAndUpdate(req.session.user_id, {CompanyInfo:newCompany._id}  )
+    res.redirect('/sponsors');
+}
+
 module.exports.contact = async function(req,res){
     const {id} = req.params;
     const events = await Events.find({ _id : id});
@@ -78,6 +93,13 @@ module.exports.getcart = async function(req,res){
 module.exports.addtocart = async function(req, res){
     const {id} = req.params;
     const newEvent = await Events.findById(id);
+    const sponsor = await Sponsor.findById(req.session.user_id)
+    const company_id = await Company.findById(sponsor.CompanyInfo);  
+    await newEvent.InterestedCompanies.push(company_id);
+    newEvent.save();
+    await Sponsor.findByIdAndUpdate(req.session.user_id, {$push:{cart:newEvent}})
+    //const eventManager = Manager.findOne({_id: newEvent.Manager_id})
+
     await (await Sponsor.findByIdAndUpdate(req.session.user_id, {$push:{cart:newEvent}}))
     // const eventadded = await Events.findById(req.session.user_id).populate("cart");
     // console.log(eventadded);
