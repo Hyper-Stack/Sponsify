@@ -47,17 +47,24 @@ $ node index.js
 Go to the address ```localhost:3000``` on your web browser.
 You are all set and good to go!
 
-## To get Emails
-If you want to get emails whenever user contacts you through forms. Type API_KEY and DOMAIN in .env file
-        api_key: process.env.API_KEY ||  // TODO: Replace with your mailgun API KEY
-        domain: process.env.DOMAIN   Replace with your mailgun DOMAIN
 
-## To Upload Images
-get the api keys of Cloudinary. and set them into your .env file    
+### To get Emails
+If you want to receive emails whenever user contacts you through forms. Type ```API_KEY``` and ```DOMAIN``` in ```.env``` file:
+
+```
+api_key: process.env.API_KEY ||  //TODO: Replace with your mailgun API KEY
+domain: process.env.DOMAIN   //TODO: Replace with your mailgun DOMAIN
+```
+
+### To Upload Images
+
+Get the api keys of [Cloudinary](https://cloudinary.com/). and set them into your ```.env``` file:
+
+```
 CLOUDINARY_CLOUD_NAME ="Cloudinary cloud name"
 CLOUDINARY_KEY = "Cloudinary Key"
 CLOUDINARY_SECRET = "Cloudinary Secret Key"
-
+```
 ## Future Goals
 To add search filter algorithms so that we are able to provide the sponsors with only the kind of events they want to see.
 
