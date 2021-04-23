@@ -1,4 +1,7 @@
 const mongoose = require('mongoose');
+const manager = require('./manager')
+const companies = require('./companies')
+
 const eventSchema = new mongoose.Schema({
     EventName: {
         type : String,
@@ -44,6 +47,17 @@ const eventSchema = new mongoose.Schema({
     Contact : {
         type : String,
         required : true,
-    }
+    },
+    Manager_id: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref : 'manager'
+    },
+    InterestedCompanies: 
+    [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'company'
+        }
+    ]
 })
 module.exports = mongoose.model('Event', eventSchema);
