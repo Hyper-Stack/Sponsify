@@ -36,6 +36,10 @@ const companySchema = new mongoose.Schema({
         type : String,
         required : true,
     },
+    Email : {
+        type : String,
+        required : true
+    },
     Website : {
         type : String,
         // required : true,
