@@ -27,4 +27,6 @@ router.delete('/:id/delete', requireSlogin, sponsors.deletecart)
 router.get('/profile',sponsors.getprofile)
 router.post('/profile',sponsors.profile)
 router.get('/about', sponsors.about)
+router.post('/sponsorship',requireSlogin,sponsors.companyAdd);
+
 module.exports = router;
