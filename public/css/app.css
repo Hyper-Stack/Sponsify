@@ -1214,3 +1214,7 @@
      width: 24px !important;
      height: 24px !important;
  }
+ button:hover{
+     cursor: pointer;
+     opacity: 150%;
+ }

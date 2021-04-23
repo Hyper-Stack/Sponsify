@@ -11,47 +11,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap" rel="stylesheet">
 </head>
 
 <body class="body-sign">
     <%- include('partials/flash')%>
         <div class="container4 container sign" id="container">
-            <div class="form-container sign-up-container">
-                <form action="/manager/register" class="validated-form" method="POST" novalidate>
-                    <h1 style="margin-bottom: 0.8em;">Create Account</h1>
-                    <div style="width: 100%;">
-                        <input type="text" class="form-control" placeholder="Name" name="username" required />
-                        <div class="invalid-feedback">
-                            Required
-                        </div>
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
-                    </div>
-                    <div style="width: 100%;"><input type="email" class="form-control" placeholder="Email" name="email" required />
-                        <div class="invalid-feedback">
-                            Invalid Email
-                        </div>
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
-                    </div>
-                    <div style="width: 100%;"><input type="password" class="form-control" placeholder="Password" name="password" required />
-                        <div class="invalid-feedback">
-                            Required
-                        </div>
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
-                    </div>
-                    <button>Sign Up</button>
-                </form>
-            </div>
             <div class="form-container sign-in-container">
                 <form action="/manager/login" class="validated-form" method="POST" novalidate>
-                    <h1 style="margin-bottom: 0.8em;">Sign in</h1>
-                    
-                    <div style="width: 100%;"><input type="text" class="form-control" placeholder="Username" name="username" required />
+                    <h1 style="margin-bottom: 0.8em;font-family: 'Rubik', sans-serif;">Sign in</h1>
+
+                    <div style="width: 100%;"><input type="text" class="form-control" placeholder="Username"
+                            name="username" required />
                         <div class="invalid-feedback">
                             Required
                         </div>
@@ -59,7 +31,8 @@
                             Looks good!
                         </div>
                     </div>
-                    <div style="width: 100%;"><input type="password" class="form-control" placeholder="Password" name="password" required />
+                    <div style="width: 100%;"><input type="password" class="form-control" placeholder="Password"
+                            name="password" required />
                         <div class="invalid-feedback">
                             Required
                         </div>
@@ -73,17 +46,51 @@
             <div class="overlay-container">
                 <div class="overlay">
                     <div class="overlay-panel overlay-left">
-                        <h1>Welcome Back!</h1>
-                        <p>To keep connected with us please login with your personal info</p>
+                        <h1 style="font-family: 'Rubik', sans-serif;">HELLO MANAGER</h1>
+                        <p>Register yourself to start your journey to organise some great events.</p>
                         <button class="ghost" id="signIn">Sign In</button>
                     </div>
                     <div class="overlay-panel overlay-right">
-                        <h1>Hello, Manager!</h1>
-                        <p>Enter your personal details and start journey with us</p>
+                        <h1 style="font-family: 'Rubik', sans-serif;">WELCOME BACK!</h1>
+                        <p>To keep connected with us please login with your personal info</p>
                         <button class="ghost" id="signUp">Sign Up</button>
                     </div>
                 </div>
             </div>
+            <div class="form-container sign-up-container">
+                <form action="/manager/register" class="validated-form" method="POST" novalidate>
+                    <h1 style="margin-bottom: 0.8em;font-family: 'Rubik', sans-serif;">Create Account</h1>
+                    <div style="width: 100%;">
+                        <input type="text" class="form-control" placeholder="Name" name="username" required />
+                        <div class="invalid-feedback">
+                            Required
+                        </div>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div style="width: 100%;"><input type="email" class="form-control" placeholder="Email" name="email"
+                            required />
+                        <div class="invalid-feedback">
+                            Invalid Email
+                        </div>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div style="width: 100%;"><input type="password" class="form-control" placeholder="Password"
+                            name="password" required />
+                        <div class="invalid-feedback">
+                            Required
+                        </div>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <button>Sign Up</button>
+                </form>
+            </div>
+
         </div>
         <script src="/js/app2.js"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
