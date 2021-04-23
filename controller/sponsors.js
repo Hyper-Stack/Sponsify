@@ -32,7 +32,7 @@ module.exports.register = async function (req, res) {
     // var token = jwt.sign({ _id: user._id }, process.env.SECRET, { expiresIn: "60 days" });
     // res.cookie('nToken', token, { maxAge: 900000, httpOnly: true });
     req.session.user_id = user._id;
-    res.redirect('/sponsors')
+    res.render('sponsorDetails')
 }
 module.exports.login =  async function (req, res) {
     const { username, password } = req.body;
