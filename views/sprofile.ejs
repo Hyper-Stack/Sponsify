@@ -12,6 +12,7 @@
 </head>
 <body>
     <!-- partial:index.partial.html -->
+     <button> <a href="/sponsors">Keep exploring </a></button>
     <div class="main" style="display: flex; align-items: center;">
         <div class="bio" style="margin-top: 0; text-align: center;"><img class="profile-img"
                 src="https://st.depositphotos.com/2101611/3925/v/600/depositphotos_39258143-stock-illustration-businessman-avatar-profile-picture.jpg" />
@@ -24,7 +25,9 @@
         </div>
         <div class="contact" style="margin-top: 0;">
             <form id="form" method="POST" action="/sponsors/profile">
-                <legend class="header">Get In Touch</legend>
+                <legend class="header">
+                    <p> Having any queries? 
+                     Feel free to write to us!</p></legend>
                 <fieldset>
                     <label class="fa fa-user" for="name-input" aria-hidden="true"></label>
                     <input type="text" placeholder="Your name..." id="name-input" name="Name" value="<%= user.username %>"/>
