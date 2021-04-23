@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs')
 const event = require('./events');
+const company = require('./companies')
+
 const sponsorSchema = new mongoose.Schema({
     username:{
         type: String,
@@ -15,6 +17,10 @@ const sponsorSchema = new mongoose.Schema({
         type: String,
         // required: [true, "Email can't be blank"],
         unique:true
+    },
+    CompanyInfo :{
+        type:  mongoose.Schema.Types.ObjectId,
+        ref : 'company'
     },
     cart:   [
         {
