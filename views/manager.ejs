@@ -65,10 +65,11 @@
                       <p class="venue"> </p>
                       <address class="address">
                         <p class="street-address">
-                          <%= event.Email %>
+                          Type :- <%= event.EventType %>
                         </p>
-                        <p class="locality">
-                          <%= event.Contact %>
+                        <p style="margin-top: 8px;" class="locality">
+                          <i class="fa fa-envelope"></i>
+                          <%= event.Email %>
                         </p>
                       </address>
                     </div>
@@ -86,7 +87,7 @@
                       <button class="btn-details grey" aria-label="Learn more about the band and venue">
                         Details</button>
                       <form action='/manager/Edit' method="post" style="height: 0;">
-                        
+
                         <button class="btn-tickets blue on-back" type="submit">EDIT</button>
                         <input value="<%= event._id%>" style="visibility:hidden;height: 0; width:0; padding:0;"
                           name="Edit">
@@ -99,29 +100,33 @@
                       <h2 class="bio-band">
                         <%= event.EventName %>
                       </h2>
-                      <h3 class="bio-title">Bio</h3>
+                      <h3 class="bio-title">Description</h3>
                     </div>
                     <div class="scroll-block">
-                      <p class="bio-text">
+                      <p class="bio-text" style="margin: 0 !important;">
                         <%= event.EventDescription%>
-                        <a href="/manager/<%=event._id%>/companyNames"> Interested companies</a>
+
                       </p>
                     </div>
                     <div class="more-info">
-                      <p>
-                        <a class="info" aria-label="website" href="<%= event.Website %> ">
-                          <%= event.EventName %>Website
-                        </a>
+                      <p style="color: rgb(68, 68, 68);">
+                        Target Audience :- <%= event.TargetAudience %>
+                      </p>
+                      <p style="color: rgb(68, 68, 68);">
+                        Expected Footfall :- <%= event.ExpectedFootfall %>
                       </p>
                       <p>
-                        <a class="info" aria-label="fb" href="#">
-                          <%= event.Facebook %>Facebook
-                        </a>
+                        <a target="_blank" href="<%= event.Website %>"><img style="width: 30px; margin-right: 0.7em;"
+                            src="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgNTEyLjQ0MyA1MTIuNDQzIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMi40NDMgNTEyLjQ0MyIgd2lkdGg9IjUxMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJtMjU2LjIyMSA1MTIuMzczYy0xNDEuNTY3IDAtMjU2LjE1MS0xMTQuNTY0LTI1Ni4xNTEtMjU2LjE1MiAwLTE0MS41NjYgMTE0LjU2NC0yNTYuMTUxIDI1Ni4xNTEtMjU2LjE1MSAxNDEuNTY3IDAgMjU2LjE1MSAxMTQuNTY0IDI1Ni4xNTEgMjU2LjE1MS4wMDEgMTQxLjU2Ni0xMTQuNTYzIDI1Ni4xNTItMjU2LjE1MSAyNTYuMTUyeiIgZmlsbD0iIzg2YmZmMiIvPjxwYXRoIGQ9Im03My4zNDkgOTkuNzQxYy02LjIyNy02LjM0OC02LjIyNy0xNi41MTIgMC0yMi44NiAxMDAuNTQ2LTEwMi41MTQgMjY1LjIxMi0xMDIuNSAzNjUuNzQ0IDAgNi4yMjcgNi4zNDggNi4yMjcgMTYuNTEyIDAgMjIuODYtMTAwLjU0NiAxMDIuNTE1LTI2NS4yMTEgMTAyLjUtMzY1Ljc0NCAweiIgZmlsbD0iI2Q3ZWRmZiIvPjxwYXRoIGQ9Im03My4zNDkgNDM1LjU2MmMtNi4yMjctNi4zNDgtNi4yMjctMTYuNTEyIDAtMjIuODYgMTAwLjU0Ni0xMDIuNTE1IDI2NS4yMTItMTAyLjUwMSAzNjUuNzQ0IDAgNi4yMjcgNi4zNDggNi4yMjcgMTYuNTEyIDAgMjIuODYtMTAwLjU0OCAxMDIuNTE1LTI2NS4yMSAxMDIuNS0zNjUuNzQ0IDB6IiBmaWxsPSIjZDdlZGZmIi8+PHBhdGggZD0ibTI1Ni4yMjEgNTEyLjM3M2MtMTMzLjUyMyAwLTE5NC4zNy0yNzQuOTkzLTEwNy4zNTQtNDMzLjU4NyAyNy44NS01MC43NiA2NS45NzYtNzguNzE1IDEwNy4zNTQtNzguNzE1IDEzMy41MjMgMCAxOTQuMzcgMjc0Ljk5MyAxMDcuMzU0IDQzMy41ODctMjcuODQ5IDUwLjc1OS02NS45NzUgNzguNzE1LTEwNy4zNTQgNzguNzE1eiIgZmlsbD0iI2I5ZGNmZiIvPjxwYXRoIGQ9Im0xMjQuMDY1IDEzOS45NDRjODAuNzM1IDQ4LjgzNSAxODMuNTMzIDQ4Ljg2MiAyNjQuMzEzIDAtNTMuOTAyLTE4Ni4xOTEtMjEwLjIzMi0xODYuODEtMjY0LjMxMyAweiIgZmlsbD0iIzg2YmZmMiIvPjxwYXRoIGQ9Im0xMjQuMDY1IDM3Mi40OTljNTMuOTU0IDE4Ni4zNjggMjEwLjI5MSAxODYuNjA3IDI2NC4zMTMgMC04MC43MzUtNDguODM1LTE4My41MzMtNDguODYzLTI2NC4zMTMgMHoiIGZpbGw9IiM4NmJmZjIiLz48cGF0aCBkPSJtNDM3LjM0NyA3NS4wOTVjLTEwMC4xLTEwMC4xMDItMjYyLjEzNi0xMDAuMTE4LTM2Mi4yNTIgMC0xMDAuMTAzIDEwMC4xMDItMTAwLjExOCAyNjIuMTM2IDAgMzYyLjI1MyAxMDAuMSAxMDAuMTAyIDI2Mi4xMzYgMTAwLjExOCAzNjIuMjUyIDAgMTAwLjEwNC0xMDAuMTAzIDEwMC4xMTgtMjYyLjEzNyAwLTM2Mi4yNTN6bS0xMC43MDUgMzI1LjczOGMtMTEuOTY4LTEwLjcwMi0yNC43Ny0yMC4xNzMtMzguMjY0LTI4LjMzNSA4LjkxOS0zMC44MDkgMTQuMjAzLTY0LjcxMiAxNS40NTItOTkuOTU0aDc1LjMwOWMtMy40MDYgNDcuNTAzLTIxLjY1NyA5Mi4wNjQtNTIuNDk3IDEyOC4yODl6bS0zOTMuMzM4LTEyOC4yODloNzUuMzA5YzEuMjQ5IDM1LjI0MiA2LjUzMyA2OS4xNDUgMTUuNDUyIDk5Ljk1NC0xMy40OTQgOC4xNjItMjYuMjk2IDE3LjYzMy0zOC4yNjQgMjguMzM1LTMwLjg0LTM2LjIyNS00OS4wOTEtODAuNzg2LTUyLjQ5Ny0xMjguMjg5em01Mi40OTctMTYwLjkzNWMxMS45NjggMTAuNzAyIDI0Ljc3IDIwLjE3MyAzOC4yNjQgMjguMzM1LTguOTE5IDMwLjgwOS0xNC4yMDMgNjQuNzEyLTE1LjQ1MiA5OS45NTRoLTc1LjMwOWMzLjQwNi00Ny41MDMgMjEuNjU3LTkyLjA2NCA1Mi40OTctMTI4LjI4OXptMTU0LjA5NyAzMS43MDhjLTI2LjYyMi0xLjkwNC01Mi4yOTEtOC40NjEtNzYuMDg4LTE5LjI3OCAxMy44NC0zNS42MzkgMzkuMzU0LTc4LjM4NCA3Ni4wODgtODguOTc3em0wIDMyLjcwOHY2My44NzNoLTk4LjYyNWMxLjEzLTI5LjgxMiA1LjM1NC01OC40MzkgMTIuMzc5LTg0LjYzMiAyNy4wNDMgMTEuODIyIDU2LjEyNyAxOC44ODIgODYuMjQ2IDIwLjc1OXptMCA5Ni41MTl2NjMuODczYy0zMC4xMTkgMS44NzctNTkuMjAzIDguOTM3LTg2LjI0NiAyMC43NTktNy4wMjUtMjYuMTkzLTExLjI0OS01NC44Mi0xMi4zNzktODQuNjMyem0wIDk2LjU4MXYxMDguMjU0Yy0zNi43MzItMTAuNTkzLTYyLjI0Ni01My4zMzMtNzYuMDg4LTg4Ljk3NiAyMy43OTctMTAuODE3IDQ5LjQ2Ny0xNy4zNzQgNzYuMDg4LTE5LjI3OHptMzIuNjQ3IDBjMjYuNjIyIDEuOTA0IDUyLjI5MSA4LjQ2MSA3Ni4wODggMTkuMjc4LTEzLjg0MSAzNS42NC0zOS4zNTQgNzguMzgzLTc2LjA4OCA4OC45NzZ6bTAtMzIuNzA4di02My44NzNoOTguNjI1Yy0xLjEzIDI5LjgxMi01LjM1NCA1OC40MzktMTIuMzc5IDg0LjYzMi0yNy4wNDQtMTEuODIyLTU2LjEyOC0xOC44ODItODYuMjQ2LTIwLjc1OXptMC05Ni41MTl2LTYzLjg3M2MzMC4xMTktMS44NzcgNTkuMjAzLTguOTM3IDg2LjI0Ni0yMC43NTkgNy4wMjUgMjYuMTkzIDExLjI0OSA1NC44MiAxMi4zNzkgODQuNjMyem0wLTk2LjU4MXYtMTA4LjI1NGMzNi43MzQgMTAuNTkzIDYyLjI0OCA1My4zMzggNzYuMDg4IDg4Ljk3Ny0yMy43OTcgMTAuODE2LTQ5LjQ2NyAxNy4zNzMtNzYuMDg4IDE5LjI3N3ptNzMuMzItOTEuOTU3YzIwLjg5NSA5LjE1IDQwLjM4OSAyMS41NTcgNTcuODY0IDM2Ljk1MS04LjMxOCA3LjMzNC0xNy4wOTUgMTMuOTg0LTI2LjI2IDE5LjkzMS04LjEzOS0yMC4xNTItMTguNTM3LTM5LjczNi0zMS42MDQtNTYuODgyem0tMjEwLjg5MSA1Ni44ODJjLTkuMTY1LTUuOTQ3LTE3Ljk0MS0xMi41OTctMjYuMjYtMTkuOTMxIDE3LjQ3NS0xNS4zOTQgMzYuOTY5LTI3LjgwMSA1Ny44NjQtMzYuOTUxLTEzLjA2OCAxNy4xNDgtMjMuNDY2IDM2LjczMi0zMS42MDQgNTYuODgyem0wIDI5NS45NThjOC4xMzggMjAuMTUxIDE4LjUzNyAzOS43MzYgMzEuNjA0IDU2Ljg4Mi0yMC44OTUtOS4xNS00MC4zODktMjEuNTU3LTU3Ljg2NC0zNi45NTEgOC4zMTgtNy4zMzQgMTcuMDk1LTEzLjk4NCAyNi4yNi0xOS45MzF6bTI0Mi40OTUgMGM5LjE2NSA1Ljk0NyAxNy45NDIgMTIuNTk3IDI2LjI2IDE5LjkzLTE3LjQ3NSAxNS4zOTQtMzYuOTY5IDI3LjgwMS01Ny44NjQgMzYuOTUxIDEzLjA2Ni0xNy4xNDQgMjMuNDY1LTM2LjcyOSAzMS42MDQtNTYuODgxem0yNi4zNjEtMTY0LjMwMmMtMS4yNDktMzUuMjQyLTYuNTMzLTY5LjE0Ni0xNS40NTItOTkuOTU0IDEzLjQ5NC04LjE2MiAyNi4yOTUtMTcuNjMzIDM4LjI2NC0yOC4zMzUgMzAuODQgMzYuMjI1IDQ5LjA5MSA4MC43ODYgNTIuNDk3IDEyOC4yODl6IiBmaWxsPSIjMmU1OGZmIi8+PC9zdmc+" /></a>
+                        <a target="_blank" href="<%= event.Facebook %>"><img style="width: 30px; margin-left: 0.7em;"
+                            src="data:image/svg+xml;base64,PHN2ZyBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAyNCAyNCIgaGVpZ2h0PSI1MTIiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjUxMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJtMTUuOTk3IDMuOTg1aDIuMTkxdi0zLjgxNmMtLjM3OC0uMDUyLTEuNjc4LS4xNjktMy4xOTItLjE2OS02LjkzMiAwLTUuMDQ2IDcuODUtNS4zMjIgOWgtMy40ODd2NC4yNjZoMy40ODZ2MTAuNzM0aDQuMjc0di0xMC43MzNoMy4zNDVsLjUzMS00LjI2NmgtMy44NzdjLjE4OC0yLjgyNC0uNzYxLTUuMDE2IDIuMDUxLTUuMDE2eiIgZmlsbD0iIzNiNTk5OSIvPjwvc3ZnPg==" /></a>
                       </p>
                     </div>
                     <div class="item-buttons back">
                       <button class="btn-details grey back-arrow" aria-label="Learn more about the band and venue"
                         href="#"></button>
+                      <a target="_blank" href="/manager/<%=event._id%>/companyNames" class="btn btn-info"
+                        style="display: flex; justify-content: center; align-items: center;"> Interested companies</a>
                       <form style="width: 100%; " action='/manager/<%=event._id%>/delete' method="post">
                         <button style="width: 100%;" class="btn-tickets red on-back" type="submit">DELETE</button>
                       </form>
