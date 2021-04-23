@@ -74,6 +74,7 @@ module.exports.editEvent = async function (req, res) {
     res.redirect('/manager');
 }
 module.exports.new = async function (req, res) {
+    req.body.Manager_id=req.session.user_id;
     const newEvent = new Event(req.body);
     newEvent.Image.url = req.file.path
     await newEvent.save()
@@ -105,4 +106,11 @@ module.exports.mail = function(req,res) {
 }
 module.exports.about =  function (req, res) {
     res.render('mabout')
+}
+module.exports.getCompanies = function(req, res){
+    const {id} =req.params;
+    const event = Event.findById(id);
+    const company_ids = event.InterestedCompanies;
+    const companies = Company.find({_id : [...company_ids]});
+    res.render('companyName', {companies})
 }
