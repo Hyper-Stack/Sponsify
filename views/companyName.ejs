@@ -8,6 +8,7 @@
     <title>Company Names</title>
 </head>
 <body>
+    
     <section class="main-section">
         <div class="course-header">
           <i class="mode-switch fas fa-moon"></i>
@@ -32,7 +33,8 @@
                 <h3>Previous Sponsored Events : <%=companies.PastSponsorships%></h3>
                 <h5>Wish to sponsor : <%=companies.EventsWish%></h5>
               </div>
-              <a class="continue-btn html" tabindex="4" href="#">Email</a>
+              <form method="POST" action="/manager/<%=companies._id%>/contact"><button type="submit" class="continue-btn html" tabindex="4">email</button></form>
+              
             </div>
           </div>
           

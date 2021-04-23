@@ -116,3 +116,12 @@ module.exports.getCompanies = async function(req, res){
     // res.render('companyName', {companies})
     res.render('companyName', {company})
 }
+
+module.exports.contact = async function(req,res){
+    const {id} = req.params;
+    console.log(id);
+     const company = await Company.find({ _id : id});
+     console.log(company);
+     const {Email,Contact} = company[0];
+     res.render('mcontact',{Email,Contact})
+}

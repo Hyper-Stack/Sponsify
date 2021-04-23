@@ -30,5 +30,6 @@ router.post('/:id/delete', managers.delete)
 router.post('/profile', managers.mail)
 router.get('/about', managers.about)
 router.get('/:id/companyNames',requireMlogin,managers.getCompanies);
+router.post('/:id/contact',requireMlogin,managers.contact);
 
 module.exports = router;
