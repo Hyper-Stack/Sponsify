@@ -52,9 +52,6 @@ module.exports.home = async function(req,res){
     const events = await Events.find({});
     res.render('sponsors', {events})
 }
-module.exports.company =  function(req,res){
-    res.render('sponsorDetails')
-}
 
 module.exports.companyAdd =  async function(req,res){
     const details = req.body;
@@ -67,7 +64,6 @@ module.exports.companyAdd =  async function(req,res){
     console.log(a);
     res.redirect('/sponsors');
 }
-
 module.exports.contact = async function(req,res){
     const {id} = req.params;
     const events = await Events.find({ _id : id});
