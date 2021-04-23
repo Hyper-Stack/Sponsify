@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Register</title>
+    <title>CodePen - Interactive Form</title>
     <link href='https://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel="stylesheet" href="/css/app3.css">
@@ -12,45 +12,55 @@
 
 <body>
     <!-- partial:index.partial.html -->
-    <form autocomplete="off">
-        <input id="input-1" type="text" placeholder="John Doe" required autofocus />
+    <form autocomplete="off" method="POST" action="/sponsors/sponsorship"> 
+        <input id="input-1" type="text" placeholder="John Doe" name="FullName" required autofocus />
         <label for="input-1">
             <span class="label-text">Full Name</span>
             <span class="nav-dot"></span>
             <div class="signup-button-trigger">Sign Up</div>
         </label>
-        <input id="input-2" type="email" placeholder="email@address.com" required />
+        <input id="input-2" type="text" placeholder="Company Pvt. Ltd." name="CompanyName" required />
         <label for="input-2">
-            <span class="label-text">Email</span>
+            <span class="label-text">Organisation Name</span>
             <span class="nav-dot"></span>
         </label>
-        <input id="input-3" type="text" placeholder="Company" required />
+        <input id="input-3" type="text" placeholder="Automobile, Beverages..." name="Product" required />
         <label for="input-3">
-            <span class="label-text">Company Name</span>
+            <span class="label-text">Product your Company Sells </span>
             <span class="nav-dot"></span>
         </label>
-        <input id="input-4" type="text" placeholder="Ex:- 2007" required />
+        <input id="input-4" type="text" placeholder="e.g., 2007" name="YearOfEstablishment" required />
         <label for="input-4">
             <span class="label-text">Year of Establishment</span>
             <span class="nav-dot"></span>
         </label>
-        <input id="input-5" type="text" placeholder="Events sponsored by you" required />
+        <input id="input-5" type="text" placeholder="Youth, Professionals...." name="TargetCustomers" required />
         <label for="input-5">
-            <span class="label-text">Past Experience if any</span>
+            <span class="label-text">Target Customer Of Your Product</span>
             <span class="nav-dot"></span>
         </label>
-        <input id="input-6" type="text" placeholder="Ex:-Corporate, Fests, Community" required />
+        <input id="input-6" type="text" placeholder="Events sponsored by you" name="PastSponsorships" required />
         <label for="input-6">
+            <span class="label-text">Past Sponsorships</span>
+            <span class="nav-dot"></span>
+        </label>
+        <input id="input-7" type="text" placeholder="Corporate, Cultural, Charity...." name="EventsWish" required />
+        <label for="input-7">
             <span class="label-text">Type of Event you wish to sponsor</span>
             <span class="nav-dot"></span>
         </label>
-        <input id="input-7" type="text" placeholder="Surat, Gujarat" required />
-        <label for="input-7">
+        <input id="input-8" type="text" placeholder="Surat, Gujarat" name="PrefferedLocation" required />
+        <label for="input-8">
             <span class="label-text">Preferred location</span>
             <span class="nav-dot"></span>
         </label>
-        <input id="input-8" type="text" placeholder="(+91)" required />
-        <label for="input-8">
+        <input id="input-9" type="text" placeholder="company.com" name="Website" required />
+        <label for="input-9">
+            <span class="label-text">Company's Website</span>
+            <span class="nav-dot"></span>
+        </label>
+        <input id="input-10" type="text" placeholder="(+91)" name="Contact" required />
+        <label for="input-10">
             <span class="label-text">Contact No.</span>
             <span class="nav-dot"></span>
         </label>
