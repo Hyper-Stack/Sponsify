@@ -19,7 +19,7 @@
     <%- include('partials/flash')%>
         <div class="container4 container sign" id="container">
             <div class="form-container sign-in-container">
-                <form action="/manager/login" class="validated-form" method="POST" novalidate>
+                <form action="/manager/login" class="validated-form" method="POST" style="background-color: rgb(241, 230, 216);" novalidate >
                     <h1 style="margin-bottom: 0.8em;font-family: 'Rubik', sans-serif;">Sign In</h1>
                     <div style="width: 100%;"><input type="text" class="form-control" placeholder="Username"
                             name="username" required />
@@ -45,23 +45,21 @@
             <div class="overlay-container">
                 <div class="overlay">
                     <div class="overlay-panel overlay-left">
-                        <h1 style="font-family: 'Rubik', sans-serif; text-align: center;">HELLO MANAGER</h1>
-                        <p>Register to start your journey of organising great events with us.
-                            <br>
-                            Already have an account?
-                        </p>
+                        <h1 style="font-family: 'Rubik', sans-serif;">HELLO MANAGER!</h1>
+                        <p style="font-size: large;">Register to start your journey of organising great events with us.</p>
+                        <p style="font-size: large;" > Already have an account?</p>
                         <button class="ghost" id="signIn">Sign In</button>
                     </div>
                     <div class="overlay-panel overlay-right">
-                        <h1 style="font-family: 'Rubik', sans-serif; text-align: center;">WELCOME BACK!</h1>
-                        <br>
-                        <p> Great sponsors are waiting for you! <br> New here and don't know where to start?</p>
+                        <h1 style="font-family: 'Rubik', sans-serif;">WELCOME BACK!</h1>
+                        <p style="font-size: large;"> Great events are waiting for you! </p>
+                        <p style="font-size: large;"> New here and don't know where to start?</p>
                         <button class="ghost" id="signUp">Sign Up</button>
                     </div>
                 </div>
             </div>
             <div class="form-container sign-up-container">
-                <form action="/manager/register" class="validated-form" method="POST" novalidate>
+                <form action="/manager/register" class="validated-form" method="POST" style="background-color: rgb(241, 230, 216);" novalidate>
                     <h1 style="margin-bottom: 0.8em;font-family: 'Rubik', sans-serif;">Sign Up</h1>
                     <div style="width: 100%;">
                         <input type="text" class="form-control" placeholder="Name" name="username" required />
