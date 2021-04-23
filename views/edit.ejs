@@ -12,7 +12,7 @@
 
 <body>
     <!-- partial:index.partial.html -->
-    <form autocomplete="off" action= "/manager/EditEvent?_method=PATCH" method="POST">
+    <form autocomplete="off" action= "/manager/EditEvent?_method=PATCH" method="POST" enctype="multipart/form-data">
         <input value="<%=edit._id%>" name="_id" > 
         <input id="input-1" type="text" name = "EventName" placeholder="e.g., Sunburn Goa" value="<%=edit.EventName%>" required autofocus />
         <label for="input-1">
@@ -44,11 +44,6 @@
             <span class="label-text">Website</span>
             <span class="nav-dot"></span>
         </label>
-        <input id="input-6" type="text" name = "Image" value="<%=edit.Image%>" placeholder="unsplash.com" required />
-        <label for="input-6">
-            <span class="label-text">Tmage Link</span>
-            <span class="nav-dot"></span>
-        </label>
         <input id="input-7" type="text" name = "Facebook" value="<%=edit.Facebook%>" placeholder="www.facebook.com/-----" required />
         <label for="input-7">
             <span class="label-text">Facebook Link</span>
@@ -77,7 +72,15 @@
             <span class="label-text">Contact no.</span>
             <span class="nav-dot"></span>
         </label>
-        
+        <div class="mb-3">
+            <div class="form-file custom-file">
+                <input type="file" class="form-file-input" id="image" name="Image">
+                <label class="form-file-label" for="image">
+                    <span class="form-file-text custom-file-label"></span>
+                    <span class="form-file-button"></span>
+                </label>
+            </div>
+        </div>
         <button class="sub-btn" type="submit">Edit Event Details</button>
         <p class="tip">Press Tab</p>
         <!-- partial -->
