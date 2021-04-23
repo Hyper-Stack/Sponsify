@@ -95,15 +95,19 @@ module.exports.addtocart = async function(req, res){
     await newEvent.save();
     console.log(newEvent)
     await Sponsor.findByIdAndUpdate(req.session.user_id, {$push:{cart:newEvent}})
-    //const eventManager = Manager.findOne({_id: newEvent.Manager_id})
-    await (await Sponsor.findByIdAndUpdate(req.session.user_id, {$push:{cart:newEvent}}))
+    // const eventManager = Manager.findOne({_id: newEvent.Manager_id})
+    // await (await Sponsor.findByIdAndUpdate(req.session.user_id, {$push:{cart:newEvent}}))
     // const eventadded = await Events.findById(req.session.user_id).populate("cart");
     // console.log(eventadded);
     res.redirect('/sponsors/cart')
 }
 module.exports.deletecart = async function(req, res){
     const {id} = req.params;
-    const deleteEvent = await Events.findOne({id});
+    const deleteEvent = await Events.findById(id);
+    const sponsor = await Sponsor.findById(req.session.user_id)
+    const company_id = await Company.findById(sponsor.CompanyInfo);  
+    await deleteEvent.InterestedCompanies.pull(company_id);
+    await deleteEvent.save();
     await (await Sponsor.findByIdAndUpdate(req.session.user_id, {$pull:{cart:id}}))
     res.redirect('/sponsors/cart')
 }
