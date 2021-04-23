@@ -12,7 +12,7 @@ var cookieParser = require('cookie-parser');
 const Event = require('../models/events');
 const sendMail = require('../controller/mail.js');
 const {cloudinary} = require('../cloudinary/index')
-
+const Company = require('../models/companies')
 module.exports.getRegister = function (req, res) {
     req.flash('success', 'Login or SignUp to continue')
     res.render('managerRegister')
@@ -107,10 +107,12 @@ module.exports.mail = function(req,res) {
 module.exports.about =  function (req, res) {
     res.render('mabout')
 }
-module.exports.getCompanies = function(req, res){
+module.exports.getCompanies = async function(req, res){
     const {id} =req.params;
-    const event = Event.findById(id);
-    const company_ids = event.InterestedCompanies;
-    const companies = Company.find({_id : [...company_ids]});
-    res.render('companyName', {companies})
+    const event = await Event.findById(id);
+    const companies = event.InterestedCompanies;
+    const company = await Company.find({_id : [...companies]});
+    console.log(company)
+    // res.render('companyName', {companies})
+    res.render('companyName', {company})
 }

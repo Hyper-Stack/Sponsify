@@ -63,8 +63,8 @@ module.exports.companyAdd =  async function(req,res){
     await newCompany.save()
         .then(()=>console.log("it worked!"))
         .catch((err)=>{console.log(err); console.log("not worked")})
-    
-    await Sponsor.findByIdAndUpdate(req.session.user_id, {CompanyInfo:newCompany._id}  )
+    const a = await (await Sponsor.findByIdAndUpdate(req.session.user_id, {CompanyInfo:newCompany})).populate('CompanyInfo')
+    console.log(a);
     res.redirect('/sponsors');
 }
 
@@ -96,10 +96,10 @@ module.exports.addtocart = async function(req, res){
     const sponsor = await Sponsor.findById(req.session.user_id)
     const company_id = await Company.findById(sponsor.CompanyInfo);  
     await newEvent.InterestedCompanies.push(company_id);
-    newEvent.save();
+    await newEvent.save();
+    console.log(newEvent)
     await Sponsor.findByIdAndUpdate(req.session.user_id, {$push:{cart:newEvent}})
     //const eventManager = Manager.findOne({_id: newEvent.Manager_id})
-
     await (await Sponsor.findByIdAndUpdate(req.session.user_id, {$push:{cart:newEvent}}))
     // const eventadded = await Events.findById(req.session.user_id).populate("cart");
     // console.log(eventadded);
